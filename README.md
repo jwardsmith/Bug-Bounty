@@ -9,3 +9,11 @@
 - Impact - what can be done with the vulnerability?
 - Mitigation - how is it fixed?
 - Affected Assets - generally a list of affected URLs
+
+### Severity
+
+- Informational - issue has no real impact
+- Low - the business impact is minimal
+- Medium - potential to cause harm to users, but not revealing data
+- High - potential to reveal user data or aids in exploitation of other vulnerabilities
+- Critical - high risk of personal/confidential data exposure, general system compromise, and other severe impacts to the business
