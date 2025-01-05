@@ -4,8 +4,9 @@ Overview
 ---------
 1. - [Web Requests](#1---web-requests)
 2. - [Online Resources](#2---online-resources)
-3. - [HTML Injection](#3---html-injection)
-4. - [Cross-Site Scripting (XSS)](#4---cross-site-scripting-xss)
+3. - [Sensitive Data Exposure](#3---sensitive-data-exposure)
+4. - [HTML Injection](#4---html-injection)
+5. - [Cross-Site Scripting (XSS)](#5---cross-site-scripting-xss)
 
    
 #1. - Web Requests
@@ -60,7 +61,7 @@ https://htmlg.com/html-editor/
 https://jsfiddle.net/
 ```
 
-#2. - Sensitive Data Exposure
+#3. - Sensitive Data Exposure
 -----------------------------------------
 
 - Source Code
@@ -71,7 +72,7 @@ OR
 CTRL + U
 ```
 
-#3. - HTML Injection
+#4. - HTML Injection
 -----------------------------------------
 
 - Hyperlink
@@ -80,7 +81,7 @@ CTRL + U
 <a href="http://www.google.com">Click Me</a>
 ```
 
-#4. - Cross-Site Scripting (XSS)
+#5. - Cross-Site Scripting (XSS)
 -----------------------------------------
 
 *Reflected XSS	= Occurs when user input is displayed on the page after processing (e.g., search result or error message).*
