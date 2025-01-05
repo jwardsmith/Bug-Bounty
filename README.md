@@ -39,3 +39,15 @@ F12
 https://owasp.org/www-project-web-security-testing-guide/
 https://github.com/OWASP/wstg/tree/master/document/4-Web_Application_Security_Testing
 ```
+
+- HTML - CSS - JS Online Editor
+
+```
+https://html-css-js.com/
+```
+
+- HTML WYSIWYG Online Editor
+
+```
+https://htmlg.com/html-editor/
+```
