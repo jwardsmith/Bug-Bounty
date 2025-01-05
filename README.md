@@ -4,8 +4,8 @@ Overview
 ---------
 1. - [Web Requests](#1---web-requests)
 2. - [Online Resources](#2---online-resources)
-3. - [Online Resources](#3---html-injection)
-4. - [Online Resources](#4---cross-site-scripting)  
+3. - [HTML Injection](#3---html-injection)
+4. - [Cross-Site Scripting (XSS)](#4---cross-site-scripting-xss)
 
    
 #1. - Web Requests
