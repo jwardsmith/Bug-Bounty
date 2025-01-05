@@ -51,3 +51,9 @@ https://html-css-js.com/
 ```
 https://htmlg.com/html-editor/
 ```
+
+- JSFiddle Code Playground
+
+```
+https://jsfiddle.net/
+```
