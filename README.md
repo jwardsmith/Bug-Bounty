@@ -57,3 +57,14 @@ https://htmlg.com/html-editor/
 ```
 https://jsfiddle.net/
 ```
+
+#2. - Sensitive Data Exposure
+-----------------------------------------
+
+- Source Code
+
+```
+Right-click -> View page source
+OR
+CTRL + U
+```
