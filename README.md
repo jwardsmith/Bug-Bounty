@@ -3,7 +3,9 @@
 Overview
 ---------
 1. - [Web Requests](#1---web-requests)
-2. - [Online Resources](#2---online-resources)  
+2. - [Online Resources](#2---online-resources)
+3. - [Online Resources](#3---html-injection)
+4. - [Online Resources](#4---cross-site-scripting)  
 
    
 #1. - Web Requests
@@ -68,3 +70,21 @@ Right-click -> View page source
 OR
 CTRL + U
 ```
+
+#3. - HTML Injection
+-----------------------------------------
+
+- Hyperlink
+
+```
+<a href="http://www.google.com">Click Me</a>
+```
+
+#4. - Cross-Site Scripting (XSS)
+-----------------------------------------
+
+*Reflected XSS	= Occurs when user input is displayed on the page after processing (e.g., search result or error message).*
+
+*Stored XSS = Occurs when user input is stored in the back end database and then displayed upon retrieval (e.g., posts or comments).*
+
+*DOM XSS	= Occurs when user input is directly shown in the browser and is written to an HTML DOM object (e.g., vulnerable username or page title).*
