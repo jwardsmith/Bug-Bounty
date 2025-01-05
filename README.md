@@ -12,7 +12,7 @@ Overview
 ```
 $ curl -v <URL>
 curl -H 'Authorization: Basic YWRtaW46YWRtaW4=' <URL>
-curl '<URL>/search.php?search=le'
+curl <URL>/search.php?search=test
 curl -X POST -d 'username=admin&password=admin' <URL>
 curl -b 'PHPSESSID=c1nsa6op7vtk7kdis7bcnbadf1' <URL>
 ```
