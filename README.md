@@ -3,6 +3,8 @@
 Overview
 ---------
 1. - [Web Requests](#1---web-requests)
+2. - [Online Resources](#1---online-resources)  
+
    
 #1. - Web Requests
 -----------------------------------------
@@ -26,4 +28,13 @@ $ curl -H 'Cookie: PHPSESSID=c1nsa6op7vtk7kdis7bcnbadf1' <URL>
 
 ```
 F12
+```
+
+#2. - Online Resources
+-----------------------------------------
+
+- OWASP Web Security Testing Guide
+
+```
+https://github.com/OWASP/wstg/tree/master/document/4-Web_Application_Security_Testing
 ```
