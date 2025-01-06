@@ -42,7 +42,15 @@ F12
 
 - Burp Suite
 
+```
+Proxy -> Intercept -> Open Browser
+```
+
 - ZAP Proxy
+
+```
+Firefox Icon
+```
 
 #3. - Online Resources
 -----------------------------------------
