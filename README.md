@@ -149,7 +149,7 @@ $ theHarvester -d <Domain Name> -b google > google.txt
 $ amass
 $ assetfinder
 $ puredns
-$ gobuster
+$ gobuster vhost -u http://<IP address> -w <wordlist> --append-domain
 $ Feroxbuster
 $ ffuf
 ```
