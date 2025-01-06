@@ -122,6 +122,13 @@ $ whois <Domain Name>
 https://whoisfreaks.com/
 ```
 
+- DNS
+
+```
+Edit /etc/hosts
+Edit C:\Windows\System32\drivers\etc\hosts
+```
+
 #6. - Sensitive Data Exposure
 -----------------------------------------
 
