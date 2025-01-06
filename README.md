@@ -55,6 +55,13 @@ Settings -> Network Settings -> Settings -> Select Manual proxy configuration ->
 Firefox Icon
 ```
 
+- Proxychains
+
+```
+Edit /etc/proxychains4.conf
+$ proxychains <command>
+```
+
 #3. - Online Resources
 -----------------------------------------
 
