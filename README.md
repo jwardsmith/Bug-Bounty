@@ -126,7 +126,14 @@ https://whoisfreaks.com/
 
 ```
 Edit /etc/hosts OR C:\Windows\System32\drivers\etc\hosts
-$ dig
+$ dig <Domain Name>
+$ dig <Domain Name> NS
+$ dig <Domain Name> MS
+$ dig @1.1.1.1 <Domain Name>
+$ dig +trace <Domain Name>
+$ dig -x <IP address>
+$ dig +short <Domain Name>
+$ dig <Domain Name> ANY
 C:\> nslookup
 $ host
 $ dnsenum
