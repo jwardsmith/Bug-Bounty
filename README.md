@@ -119,6 +119,7 @@ https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
 
 ```
 $ whois <Domain Name>
+https://whoisfreaks.com/
 ```
 
 #6. - Sensitive Data Exposure
