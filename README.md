@@ -141,6 +141,7 @@ $ host -t mx <Domain Name>
 $ host -t txt <Domain Name>
 $ host -l <Domain Name> <DNS server name/IP address>
 $ dnsenum <Domain Name>
+$ dnsenum --enum <Domain Name> -f <wordlist> -r
 $ dnsrecon -d <Domain Name> -t axfr
 $ fierce
 $ theHarvester -d <Domain Name> -b google > google.txt
