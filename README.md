@@ -17,7 +17,8 @@ Overview
 
 ```
 $ curl -v <URL>
-$ curl -IL <URL>
+$ curl -I <URL>
+$ curl -i <URL>
 $ curl -v -X OPTIONS <URL>
 $ curl -u admin:admin <URL>
 $ curl -H 'Authorization: Basic YWRtaW46YWRtaW4=' <URL>
