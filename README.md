@@ -140,6 +140,9 @@ $ dnsenum
 $ dnsrecon
 $ fierce
 $ theHarvester
+$ amass
+$ assetfinder
+$ puredns
 ```
 
 #6. - Sensitive Data Exposure
