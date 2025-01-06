@@ -115,6 +115,12 @@ https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
 #5. - Web Reconnaissance
 -----------------------------------------
 
+- Whois
+
+```
+$ whois <Domain Name>
+```
+
 #6. - Sensitive Data Exposure
 -----------------------------------------
 
