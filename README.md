@@ -149,6 +149,9 @@ $ theHarvester -d <Domain Name> -b google > google.txt
 $ amass
 $ assetfinder
 $ puredns
+$ gobuster
+$ Feroxbuster
+$ ffuf
 ```
 
 #6. - Sensitive Data Exposure
