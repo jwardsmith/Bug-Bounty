@@ -45,6 +45,8 @@ F12
 
 ```
 Proxy -> Intercept -> Open Browser
+OR
+Settings -> Network Settings -> Settings -> Select Manual proxy configuration -> Enter IP address and port of our proxy -> Select Use this proxy server for all protocols 
 ```
 
 - ZAP Proxy
