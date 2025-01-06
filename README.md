@@ -125,8 +125,14 @@ https://whoisfreaks.com/
 - DNS
 
 ```
-Edit /etc/hosts
-Edit C:\Windows\System32\drivers\etc\hosts
+Edit /etc/hosts OR C:\Windows\System32\drivers\etc\hosts
+$ dig
+C:\> nslookup
+$ host
+$ dnsenum
+$ dnsrecon
+$ fierce
+$ theHarvester
 ```
 
 #6. - Sensitive Data Exposure
