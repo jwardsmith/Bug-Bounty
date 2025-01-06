@@ -152,6 +152,9 @@ $ puredns
 $ gobuster vhost -u http://<IP address> -w <wordlist> --append-domain
 $ Feroxbuster
 $ ffuf
+https://crt.sh/
+$ curl -s "https://crt.sh/?q=example.com&output=json" | jq -r '.[] | select(.name_value | contains("dev")) | .name_value' | sort -u
+https://search.censys.io/
 ```
 
 #6. - Sensitive Data Exposure
