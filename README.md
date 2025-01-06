@@ -135,11 +135,15 @@ $ dig -x <IP address>
 $ dig +short <Domain Name>
 $ dig <Domain Name> ANY
 C:\> nslookup
-$ host
-$ dnsenum
-$ dnsrecon
+$ host <IP address/Domain Name>
+$ host -t ns <Domain Name>
+$ host -t mx <Domain Name>
+$ host -t txt <Domain Name>
+$ host -l <Domain Name> <DNS server name/IP address>
+$ dnsenum <Domain Name>
+$ dnsrecon -d <Domain Name> -t axfr
 $ fierce
-$ theHarvester
+$ theHarvester -d <Domain Name> -b google > google.txt
 $ amass
 $ assetfinder
 $ puredns
