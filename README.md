@@ -134,6 +134,7 @@ $ dig +trace <Domain Name>
 $ dig -x <IP address>
 $ dig +short <Domain Name>
 $ dig <Domain Name> ANY
+$ dig axfr @<Name Server> <Domain Name>
 C:\> nslookup
 $ host <IP address/Domain Name>
 $ host -t ns <Domain Name>
