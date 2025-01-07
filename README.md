@@ -127,6 +127,7 @@ https://whoisfreaks.com/
 
 ```
 Edit /etc/hosts OR C:\Windows\System32\drivers\etc\hosts
+$ sudo sh -c 'echo "<IP address>  <Domain Name>" >> /etc/hosts'
 $ dig <Domain Name>
 $ dig <Domain Name> NS
 $ dig <Domain Name> MS
