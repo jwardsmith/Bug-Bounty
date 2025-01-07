@@ -244,6 +244,14 @@ OSINT Framework
 #6. - Fuzzing
 -----------------------------------------
 
+- Directory Fuzzing
+
+```
+$ ffuf -w <wordlist>:FUZZ        # assign wordlist to a keyword
+$ ffuf -w <wordlist> -u http://<Domain Name>/FUZZ
+$ ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/FUZZ
+```
+
 #7. - Sensitive Data Exposure
 -----------------------------------------
 
