@@ -135,7 +135,7 @@ $ dig -x <IP address>
 $ dig +short <Domain Name>
 $ dig <Domain Name> ANY
 $ dig axfr @<Name Server> <Domain Name>
-C:\> nslookup
+C:\> nslookup <IP address/Domain Name>
 $ host <IP address/Domain Name>
 $ host -t ns <Domain Name>
 $ host -t mx <Domain Name>
@@ -144,14 +144,14 @@ $ host -l <Domain Name> <DNS server name/IP address>
 $ dnsenum <Domain Name>
 $ dnsenum --enum <Domain Name> -f <wordlist> -r
 $ dnsrecon -d <Domain Name> -t axfr
-$ fierce
+$ fierce --domain <Domain Name> --subdomains accounts admin ads
 $ theHarvester -d <Domain Name> -b google > google.txt
-$ amass
-$ assetfinder
-$ puredns
+$ amass enum -d <Domain Name>
+$ assetfinder <Domain Name>
+$ puredns bruteforce <wordlist> <Domain Name>
 $ gobuster vhost -u http://<IP address> -w <wordlist> --append-domain
-$ Feroxbuster
-$ ffuf
+$ feroxbuster -w <wordlist> -u <URL>
+$ ffuf -w <wordlist> -u http://<IP address> -H "HOST: FUZZ.<Domain Name>"
 https://crt.sh/
 $ curl -s "https://crt.sh/?q=example.com&output=json" | jq -r '.[] | select(.name_value | contains("dev")) | .name_value' | sort -u
 https://search.censys.io/
