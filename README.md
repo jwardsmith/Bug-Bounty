@@ -252,6 +252,18 @@ $ ffuf -w <wordlist> -u http://<Domain Name>/FUZZ
 $ ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/FUZZ
 ```
 
+- Extension Fuzzing
+
+```
+$ ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/blog/indexFUZZ
+```
+
+- Page Fuzzing
+
+```
+$ ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/blog/FUZZ.php
+```
+
 #7. - Sensitive Data Exposure
 -----------------------------------------
 
