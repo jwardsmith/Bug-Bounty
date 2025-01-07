@@ -331,6 +331,12 @@ https://beautifytools.com/javascript-beautifier.php
 https://jsconsole.com/
 ```
 
+- JavaScript Minifier
+
+```
+https://www.toptal.com/developers/javascript-minifier
+```
+
 #8. - Sensitive Data Exposure
 -----------------------------------------
 
