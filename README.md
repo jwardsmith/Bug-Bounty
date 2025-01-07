@@ -277,6 +277,12 @@ ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/FUZZ -recursion -recursion-depth
 $ ffuf -w <wordlist>:FUZZ -u https://FUZZ.<Domain Name>
 ```
 
+- VHOST Fuzzing
+
+```
+$ ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/ -H 'Host: FUZZ.<Domain Name>'
+```
+
 #7. - Sensitive Data Exposure
 -----------------------------------------
 
