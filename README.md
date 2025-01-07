@@ -319,6 +319,12 @@ $ ffuf -w ids.txt:FUZZ -u http://<Domain Name>/admin/admin.php -X POST -d 'id=FU
 https://beautifytools.com/javascript-obfuscator.php
 ```
 
+- Advanced JavaScript Obfuscator
+
+```
+https://obfuscator.io/
+```
+
 - JavaScript Beautifier
 
 ```
