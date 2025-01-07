@@ -193,6 +193,7 @@ Burp Suite Spider
 OWASP ZAP
 Scapy
 Apache Nutch
+$ python3 ReconSpider.py <URL>
 ```
 
 #6. - Sensitive Data Exposure
