@@ -160,12 +160,14 @@ https://search.censys.io/
 - Fingerprinting
 
 ```
+$ curl -I <URL/Domain Name>
 Wappalyzer
 BuiltWith
 WhatWeb
 Nmap
 Netcraft
-wafw00f
+$ wafw00f <Domain Name>
+$ nikto -h <Domain Name> -Tuning b
 ```
 
 #6. - Sensitive Data Exposure
