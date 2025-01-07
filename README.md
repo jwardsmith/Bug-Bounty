@@ -350,6 +350,12 @@ https://jsconsole.com/
 https://www.toptal.com/developers/javascript-minifier
 ```
 
+- Decode Base64
+
+```
+echo <base64 string> | base64 -d
+```
+
 #8. - Sensitive Data Exposure
 -----------------------------------------
 
