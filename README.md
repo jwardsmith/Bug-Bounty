@@ -223,6 +223,12 @@ site:ecommerce.com "price" 100..500
 site:news.com -inurl:sports
 ```
 
+- Web Archives
+
+```
+https://web.archive.org/
+```
+
 #6. - Sensitive Data Exposure
 -----------------------------------------
 
