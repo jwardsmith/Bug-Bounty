@@ -229,6 +229,16 @@ site:news.com -inurl:sports
 https://web.archive.org/
 ```
 
+- Automated Recon
+
+```
+FinalRecon
+Recon-ng
+theHarvester
+SpiderFoot
+OSINT Framework
+```
+
 #6. - Sensitive Data Exposure
 -----------------------------------------
 
