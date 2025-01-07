@@ -199,6 +199,7 @@ $ python3 ReconSpider.py <URL>
 - Search Engines
 
 ```
+https://www.exploit-db.com/google-hacking-database
 site:example.com
 inurl:login
 filetype:pdf
