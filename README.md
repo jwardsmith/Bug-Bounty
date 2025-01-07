@@ -186,6 +186,15 @@ https://<Domain Name>/.well-known/assetlinks.json
 https://<Domain Name>/.well-known/mta-sts.txt
 ```
 
+- Web Crawlers
+
+```
+Burp Suite Spider
+OWASP ZAP
+Scapy
+Apache Nutch
+```
+
 #6. - Sensitive Data Exposure
 -----------------------------------------
 
