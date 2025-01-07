@@ -176,6 +176,16 @@ $ nikto -h <Domain Name> -Tuning b
 http://<Domain Name>/robots.txt
 ```
 
+- Well-Known URLs
+
+```
+https://<Domain Name>/.well-known/security.txt
+https://<Domain Name>/.well-known/change-password
+https://<Domain Name>/.well-known/openid-configuration
+https://<Domain Name>/.well-known/assetlinks.json
+https://<Domain Name>/.well-known/mta-sts.txt
+```
+
 #6. - Sensitive Data Exposure
 -----------------------------------------
 
