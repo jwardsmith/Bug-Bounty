@@ -170,6 +170,12 @@ $ wafw00f <Domain Name>
 $ nikto -h <Domain Name> -Tuning b
 ```
 
+- Robots.txt
+
+```
+http://<Domain Name>/robots.txt
+```
+
 #6. - Sensitive Data Exposure
 -----------------------------------------
 
