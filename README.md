@@ -161,11 +161,11 @@ https://search.censys.io/
 
 ```
 $ curl -I <URL/Domain Name>
-Wappalyzer
-BuiltWith
-WhatWeb
-Nmap
-Netcraft
+https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/
+https://builtwith.com/
+$ whatweb <Domain Name>
+$ nmap -O -sC <IP address>
+https://searchdns.netcraft.com/
 $ wafw00f <Domain Name>
 $ nikto -h <Domain Name> -Tuning b
 ```
