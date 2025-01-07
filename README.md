@@ -325,6 +325,12 @@ https://beautifytools.com/javascript-obfuscator.php
 https://obfuscator.io/
 ```
 
+- Six Character JavaScript Obfuscator ()+[]!
+
+```
+https://jsfuck.com/
+```
+
 - JavaScript Beautifier
 
 ```
