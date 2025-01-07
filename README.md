@@ -302,6 +302,13 @@ $ ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/admin/admin.php?FUZZ=key -fs 9
 $ ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/admin/admin.php -X POST -d 'FUZZ=key' -H 'Content-Type: application/x-www-form-urlencoded' -fs 900
 ```
 
+- Parameter Value Fuzzing
+
+```
+$ for i in $(seq 1 1000); do echo $i >> ids.txt; done        # create text file with numbers 1-1000
+$ ffuf -w ids.txt:FUZZ -u http://<Domain Name>/admin/admin.php -X POST -d 'id=FUZZ' -H 'Content-Type: application/x-www-form-urlencoded' -fs 900
+```
+
 #7. - Sensitive Data Exposure
 -----------------------------------------
 
