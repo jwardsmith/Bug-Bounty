@@ -289,6 +289,12 @@ $ ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/ -H 'Host: FUZZ.<Domain Name>'
 $ ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/ -H 'Host: FUZZ.<Domain Name>' -fs 900
 ```
 
+- GET Request Parameter Fuzzing
+
+```
+$ ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/admin/admin.php?FUZZ=key -fs 900
+```
+
 #7. - Sensitive Data Exposure
 -----------------------------------------
 
