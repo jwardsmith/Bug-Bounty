@@ -271,6 +271,12 @@ $ ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/blog/FUZZ.php
 ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/FUZZ -recursion -recursion-depth 1 -e .php -v
 ```
 
+- Sub-Domain Fuzzing
+
+```
+$ ffuf -w <wordlist>:FUZZ -u https://FUZZ.<Domain Name>
+```
+
 #7. - Sensitive Data Exposure
 -----------------------------------------
 
