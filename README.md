@@ -157,6 +157,17 @@ $ curl -s "https://crt.sh/?q=example.com&output=json" | jq -r '.[] | select(.nam
 https://search.censys.io/
 ```
 
+- Fingerprinting
+
+```
+Wappalyzer
+BuiltWith
+WhatWeb
+Nmap
+Netcraft
+wafw00f
+```
+
 #6. - Sensitive Data Exposure
 -----------------------------------------
 
