@@ -8,11 +8,11 @@ Overview
 4. - [Browser Plugins](#4---browser-plugins)
 5. - [Web Reconnaissance](#5---web-reconnaissance)
 6. - [Fuzzing](#6---fuzzing)
-7. - [Sensitive Data Exposure](#6---sensitive-data-exposure)
-8. - [HTML Injection](#7---html-injection)
-9. - [Cross-Site Scripting (XSS)](#8---cross-site-scripting-xss)
-10. - [Cross-Site Request Forgery (CSRF)](#9---cross-site-request-forgery-csrf)
-11. - [Exploit Research](#10---exploit-research)
+7. - [Sensitive Data Exposure](#7---sensitive-data-exposure)
+8. - [HTML Injection](#8---html-injection)
+9. - [Cross-Site Scripting (XSS)](#9---cross-site-scripting-xss)
+10. - [Cross-Site Request Forgery (CSRF)](#10---cross-site-request-forgery-csrf)
+11. - [Exploit Research](#11---exploit-research)
 
    
 #1. - Web Requests
