@@ -283,6 +283,12 @@ $ ffuf -w <wordlist>:FUZZ -u https://FUZZ.<Domain Name>
 $ ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/ -H 'Host: FUZZ.<Domain Name>'
 ```
 
+- Filter Fuzzing
+
+```
+$ ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/ -H 'Host: FUZZ.<Domain Name>' -fs 900
+```
+
 #7. - Sensitive Data Exposure
 -----------------------------------------
 
