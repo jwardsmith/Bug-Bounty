@@ -325,6 +325,12 @@ https://beautifytools.com/javascript-obfuscator.php
 https://beautifytools.com/javascript-beautifier.php
 ```
 
+- JavaScript Console Debugger
+
+```
+https://jsconsole.com/
+```
+
 #8. - Sensitive Data Exposure
 -----------------------------------------
 
