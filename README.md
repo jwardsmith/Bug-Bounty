@@ -313,6 +313,18 @@ $ ffuf -w ids.txt:FUZZ -u http://<Domain Name>/admin/admin.php -X POST -d 'id=FU
 #7. - JavaScript Deobfuscation
 -----------------------------------------
 
+- JavaScript Obfuscator
+
+```
+https://beautifytools.com/javascript-obfuscator.php
+```
+
+- JavaScript Beautifier
+
+```
+https://beautifytools.com/javascript-beautifier.php
+```
+
 #8. - Sensitive Data Exposure
 -----------------------------------------
 
