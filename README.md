@@ -264,6 +264,12 @@ $ ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/blog/indexFUZZ
 $ ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/blog/FUZZ.php
 ```
 
+- Recursive Fuzzing
+
+```
+ffuf -w <wordlist>:FUZZ -u http://<Domain Name>/FUZZ -recursion -recursion-depth 1 -e .php -v
+```
+
 #7. - Sensitive Data Exposure
 -----------------------------------------
 
