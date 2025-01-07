@@ -232,7 +232,8 @@ https://web.archive.org/
 - Automated Recon
 
 ```
-FinalRecon
+$ python finalrecon.py --headers --whois --url <URL>
+$ python finalrecon.py --full --url <URL>
 Recon-ng
 theHarvester
 SpiderFoot
