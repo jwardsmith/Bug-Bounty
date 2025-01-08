@@ -195,9 +195,28 @@ https://<Domain Name>/.well-known/mta-sts.txt
 ```
 Burp Suite Spider
 OWASP ZAP
-Scapy
+Scrapy
 Apache Nutch
 $ python3 ReconSpider.py <URL>
+```
+
+- Scrapy Web Crawler
+
+```
+import scrapy
+
+class ExampleSpider(scrapy.Spider):
+    name = "example"
+    start_urls = ['http://example.com/']
+
+    def parse(self, response):
+        for link in response.css('a::attr(href)').getall():
+            if any(link.endswith(ext) for ext in self.interesting_extensions):
+                yield {"file": link}
+            elif not link.startswith("#") and not link.startswith("mailto:"):
+                yield response.follow(link, callback=self.parse)
+
+$ jq -r '.[] | select(.file != null) | .file' example_data.json | sort -u
 ```
 
 - Search Engines
