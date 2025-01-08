@@ -350,10 +350,32 @@ https://jsconsole.com/
 https://www.toptal.com/developers/javascript-minifier
 ```
 
-- Decode Base64
+- Base64 Encode/Decode
 
 ```
-echo <base64 string> | base64 -d
+$ echo <string> | base64
+$ echo <base64 string> | base64 -d
+```
+
+- Hex Encode/Decode
+
+```
+$ echo <string> | xxd -p
+$ echo <hex string> | xxd -p -r
+```
+
+- ROT13 Encode/Decode
+
+```
+$ echo <string> | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+$ echo <ROT13 string> | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+https://rot13.com/
+```
+
+- Cipher Identifier & Analyzer
+
+```
+https://www.boxentriq.com/code-breaking/cipher-identifier
 ```
 
 #8. - Sensitive Data Exposure
