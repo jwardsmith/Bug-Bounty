@@ -497,7 +497,9 @@ CTRL + U
 - Automated XSS
 
 ```
-$ python xsstrike.py -u "http://<Domain Name>/index.php?task=test"	
+$ python xsstrike.py -u "http://<Domain Name>/index.php?task=test"
+https://github.com/rajeshmajumdar/BruteXSS
+https://github.com/epsylon/xsser
 ```
 
 #12. - Cross-Site Request Forgery (CSRF)
