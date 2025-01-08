@@ -70,7 +70,23 @@ $ proxychains <command>
 #3. - Web Application Vulnerability Scanners
 -----------------------------------------
 
+- Nessus
 
+```
+https://www.tenable.com/products/nessus/nessus-essentials
+```
+
+- Burp Suite
+
+```
+https://portswigger.net/burp
+```
+
+- ZAP Proxy
+
+```
+https://www.zaproxy.org/
+```
 
 #4. - Online Resources
 -----------------------------------------
