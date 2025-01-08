@@ -11,11 +11,11 @@ Overview
 7. - [Fuzzing](#7---fuzzing)
 8. - [JavaScript Deobfuscation](#8---javascript-deobfuscation)
 9. - [Cross-Site Scripting (XSS)](#9---cross-site-scripting-xss)
-10. - [SQL Injection](#9---sql-injection)
-11. - [Sensitive Data Exposure](#10---sensitive-data-exposure)
-12. - [HTML Injection](#11---html-injection)
-13. - [Cross-Site Request Forgery (CSRF)](#12---cross-site-request-forgery-csrf)
-14. - [Exploit Research](#13---exploit-research)
+10. - [SQL Injection](#10---sql-injection)
+11. - [Sensitive Data Exposure](#11---sensitive-data-exposure)
+12. - [HTML Injection](#12---html-injection)
+13. - [Cross-Site Request Forgery (CSRF)](#13---cross-site-request-forgery-csrf)
+14. - [Exploit Research](#14---exploit-research)
 
    
 #1. - Web Requests
