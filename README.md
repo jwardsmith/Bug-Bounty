@@ -407,9 +407,11 @@ CTRL + U
 
 *DOM XSS	= Occurs when user input is directly shown in the browser and is completely processed on the client-side, without reaching the back-end server and is written to an HTML DOM object (e.g., through client-side HTTP parameters or anchor tags - vulnerable username or page title).*
 
-- DOM XSS
+- XSS Testing Payloads
 
 ```
+<script>alert(window.origin)</script>
+<script>print()</script> 
 #"><img src=/ onerror=alert(document.cookie)>
 ```
 
