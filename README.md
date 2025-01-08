@@ -98,6 +98,12 @@ https://owasp.org/www-project-web-security-testing-guide/
 https://github.com/OWASP/wstg/tree/master/document/4-Web_Application_Security_Testing
 ```
 
+- PayloadAllTheThings
+
+```
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master
+```
+
 - HTML - CSS - JS Online Editor
 
 ```
