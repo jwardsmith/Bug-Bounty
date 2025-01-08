@@ -514,6 +514,7 @@ $ mysql -u <username> -h <hostname> -P 3306 -p
 ```
 SHOW DATABASES
 USE users
+SHOW GRANTS
 ```
 
 - SQL Table Commands
