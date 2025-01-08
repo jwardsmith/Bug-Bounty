@@ -494,6 +494,13 @@ CTRL + U
 <img src="" onerror=alert(window.origin)>
 ```
 
+- Bulk XSS Payloads
+
+```
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XSS%20Injection/README.md
+https://github.com/payloadbox/xss-payload-list
+```
+
 - Automated XSS
 
 ```
