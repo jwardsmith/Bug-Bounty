@@ -503,6 +503,42 @@ https://github.com/epsylon/xsser
 #10. - SQL Injection
 -----------------------------------------
 
+- SQL Login
+
+```
+$ mysql -u <username> -h <hostname> -P 3306 -p
+```
+
+- SQL General Commands
+
+```
+SHOW DATABASES
+USE users
+```
+
+- SQL Table Commands
+
+```
+CREATE TABLE logins (id INT, ...)
+SHOW TABLES
+DESCRIBE logins
+INSERT INTO table_name VALUES (value_1,..)
+INSERT INTO table_name(column2, ...) VALUES (column2_value, ..)
+UPDATE table_name SET column1=newvalue1, ... WHERE <condition>
+```
+
+- SQL Column Commands
+
+```
+SELECT * FROM table_name
+SELECT column1, column2 FROM table_name
+DROP TABLE logins
+ALTER TABLE logins ADD newColumn INT
+ALTER TABLE logins RENAME COLUMN newColumn TO oldColumn
+ALTER TABLE logins MODIFY oldColumn DATE
+ALTER TABLE logins DROP oldColumn
+```
+
 #11. - Sensitive Data Exposure
 -----------------------------------------
 
