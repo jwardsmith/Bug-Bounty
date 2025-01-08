@@ -514,31 +514,31 @@ $ mysql -u <username> -h <hostname> -P 3306 -p
 ```
 SHOW DATABASES;
 USE users;
+SHOW TABLES;
+SELECT * FROM table_name;
 ```
 
 - SQL Table Commands
 
 ```
-SHOW TABLES;
 CREATE TABLE logins (id INT, username VARCHAR(100), password VARCHAR(100), date_of_joining DATETIME);
 CREATE TABLE logins (id INT NOT NULL AUTO_INCREMENT, username VARCHAR(100) UNIQUE NOT NULL, password VARCHAR(100) NOT NULL, date_of_joining DATETIME DEFAULT NOW(), PRIMARY KEY (id));
 DESCRIBE logins;
+DROP TABLE logins;
 INSERT INTO table_name VALUES (column1_value, column2_value, column3_value);
 INSERT INTO table_name(column2, column3) VALUES (column2_value, column3_value);
 INSERT INTO table_name(column2, column3) VALUES (column2_value, column3_value), (column2_value, column3_value);
-UPDATE table_name SET column1=newvalue1, ... WHERE <condition>;
 ```
 
 - SQL Column Commands
 
 ```
-SELECT * FROM table_name;
 SELECT column1, column2 FROM table_name;
-DROP TABLE logins;
 ALTER TABLE logins ADD newColumn INT;
 ALTER TABLE logins RENAME COLUMN newColumn TO oldColumn;
 ALTER TABLE logins MODIFY oldColumn DATE;
 ALTER TABLE logins DROP oldColumn;
+UPDATE table_name SET column1=newvalue1, column2=newvalue2 WHERE <condition>;
 ```
 
 - SQL Output Commands
