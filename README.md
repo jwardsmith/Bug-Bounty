@@ -572,6 +572,21 @@ SELECT * FROM logins WHERE username != 'john' OR id > 1;
 SELECT * FROM logins WHERE username != 'tom' AND id > 3 - 2;
 ```
 
+- SQL Discovery Checkers
+
+```
+'
+"
+#
+;
+)
+%27
+%22
+%23
+%3B
+%29
+```
+
 - SQL Auth Bypass
 
 ```
