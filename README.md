@@ -551,6 +551,7 @@ SELECT * FROM logins LIMIT 2;
 SELECT * FROM logins LIMIT 1, 2;
 SELECT * FROM table_name WHERE <condition>;
 SELECT * FROM logins WHERE username LIKE 'admin%';
+SELECT * FROM logins WHERE username like '___';
 ```
 
 - SQL Auth Bypass
