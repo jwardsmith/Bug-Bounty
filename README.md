@@ -504,6 +504,19 @@ https://github.com/epsylon/xsser
 #10. - SQL Injection
 -----------------------------------------
 
+- *In-band SQL Injection*
+   - *Union Based*
+      - *Specify the exact location e.g. column which we can read - output printed to front-end.*
+   - *Error Based*
+      - *Intentionally cause an error - output printed to front-end.* 
+- *Blind SQL Injection*
+   - *Boolean Based*
+      - *Use conditional statements to control whether the page returns any output at all.* 
+   - *Time Based*
+      - *Use conditional statements that delay the page response e.g. using Sleep().* 
+- *Out-of-band SQL Injection*
+   - *Direct output to remote location e.g. DNS record.*
+
 - SQL Login
 
 ```
