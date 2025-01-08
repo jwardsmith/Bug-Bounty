@@ -355,6 +355,7 @@ https://beautifier.io/
 
 ```
 https://matthewfl.com/unPacker.html
+http://www.jsnice.org/
 ```
 
 - JavaScript Console Debugger
