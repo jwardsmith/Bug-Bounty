@@ -523,33 +523,34 @@ SHOW TABLES;
 CREATE TABLE logins (id INT, username VARCHAR(100), password VARCHAR(100), date_of_joining DATETIME);
 CREATE TABLE logins (id INT NOT NULL AUTO_INCREMENT, username VARCHAR(100) UNIQUE NOT NULL, password VARCHAR(100) NOT NULL, date_of_joining DATETIME DEFAULT NOW(), PRIMARY KEY (id));
 DESCRIBE logins;
-INSERT INTO table_name VALUES (value_1,..)
-INSERT INTO table_name(column2, ...) VALUES (column2_value, ..)
-UPDATE table_name SET column1=newvalue1, ... WHERE <condition>
+INSERT INTO table_name VALUES (column1_value, column2_value, column3_value);
+INSERT INTO table_name(column2, column3) VALUES (column2_value, column3_value);
+INSERT INTO table_name(column2, column3) VALUES (column2_value, column3_value), (column2_value, column3_value);
+UPDATE table_name SET column1=newvalue1, ... WHERE <condition>;
 ```
 
 - SQL Column Commands
 
 ```
-SELECT * FROM table_name
-SELECT column1, column2 FROM table_name
-DROP TABLE logins
-ALTER TABLE logins ADD newColumn INT
-ALTER TABLE logins RENAME COLUMN newColumn TO oldColumn
-ALTER TABLE logins MODIFY oldColumn DATE
-ALTER TABLE logins DROP oldColumn
+SELECT * FROM table_name;
+SELECT column1, column2 FROM table_name;
+DROP TABLE logins;
+ALTER TABLE logins ADD newColumn INT;
+ALTER TABLE logins RENAME COLUMN newColumn TO oldColumn;
+ALTER TABLE logins MODIFY oldColumn DATE;
+ALTER TABLE logins DROP oldColumn;
 ```
 
 - SQL Output Commands
 
 ```
-SELECT * FROM logins ORDER BY column_1
-SELECT * FROM logins ORDER BY column_1 DESC
-SELECT * FROM logins ORDER BY column_1 DESC, id ASC
-SELECT * FROM logins LIMIT 2
-SELECT * FROM logins LIMIT 1, 2
-SELECT * FROM table_name WHERE <condition>
-SELECT * FROM logins WHERE username LIKE 'admin%'
+SELECT * FROM logins ORDER BY column_1;
+SELECT * FROM logins ORDER BY column_1 DESC;
+SELECT * FROM logins ORDER BY column_1 DESC, id ASC;
+SELECT * FROM logins LIMIT 2;
+SELECT * FROM logins LIMIT 1, 2;
+SELECT * FROM table_name WHERE <condition>;
+SELECT * FROM logins WHERE username LIKE 'admin%';
 ```
 
 - SQL Auth Bypass
