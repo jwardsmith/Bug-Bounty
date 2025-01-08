@@ -421,11 +421,11 @@ CTRL + U
 #10. - Cross-Site Scripting (XSS)
 -----------------------------------------
 
-*Reflected XSS	= Occurs when user input is displayed on the page after being processed by the backend server, but without being stored (e.g., search result or error message).*
+*Reflected XSS (non-persistent)	= Occurs when user input is displayed on the page after being processed by the backend server, but without being stored (e.g., search result or error message).*
 
-*Stored XSS = Occurs when user input is stored in the back end database and then displayed upon retrieval (e.g., posts or comments).*
+*Stored XSS (persistent) = Occurs when user input is stored in the back end database and then displayed upon retrieval (e.g., posts or comments).*
 
-*DOM XSS	= Occurs when user input is directly shown in the browser and is completely processed on the client-side, without reaching the back-end server and is written to an HTML DOM object (e.g., through client-side HTTP parameters or anchor tags - vulnerable username or page title).*
+*DOM XSS (non-persistent)	= Occurs when user input is directly shown in the browser and is completely processed on the client-side, without reaching the back-end server and is written to an HTML DOM object (e.g., through client-side HTTP parameters or anchor tags - vulnerable username or page title).*
 
 - Basic XSS Payloads
 
