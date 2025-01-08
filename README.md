@@ -472,6 +472,7 @@ CTRL + U
 <script>document.body.background = "https://www.hackthebox.eu/images/logo-htb.svg"</script>
 <script>document.title = 'HackTheBox Academy'</script>
 <script>document.getElementsByTagName('body')[0].innerHTML = 'text'</script>
+<script>document.getElementsByTagName('body')[0].innerHTML = '<center><h1 style="color: white">Old Milks</h1><p style="color: white">by <img src="https://academy.hackthebox.com/images/logo-htb.svg" height="25px" alt="Fattest Milks"> </p></center>'</script>
 <script>document.getElementById('urlform').remove();</script>
 ```
 
