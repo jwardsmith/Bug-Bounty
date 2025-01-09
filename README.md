@@ -595,7 +595,7 @@ admin')-- -
 https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection#authentication-bypass
 ```
 
-- SQL Union Injection
+- SQL Union Injection (comments -- need a space after them to work)
 
 ```
 ' order by 1-- -
