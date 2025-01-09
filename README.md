@@ -660,6 +660,7 @@ $ sqlmap -u <URL> --data='id=1' --method PUT
 $ sqlmap -u <URL> --batch -t /tmp/traffic.txt
 $ sqlmap -u <URL> --parse-errors
 $ sqlmap -u <URL> -v 6 --batch
+$ sqlmap -u <URL> --proxy=http://127.0.0.1:8080
 $ sqlmap -u <URL> --prefix="%'))" --suffix="-- -"
 $ sqlmap -u <URL> -v 3 --level=5
 $ sqlmap -u <URL> --banner --current-user --current-db --is-dba
