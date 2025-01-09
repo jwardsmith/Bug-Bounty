@@ -658,6 +658,7 @@ $ sqlmap <URL> --random-agent
 $ sqlmap <URL> --cookie='PHPSESSID=ab4530f4a7d10448457fa8b0eadac29c'
 $ sqlmap -u <URL> --data='id=1' --method PUT
 $ sqlmap -u <URL> --batch -t /tmp/traffic.txt
+$ sqlmap -u <URL> --parse-errors
 $ sqlmap -u <URL> -v 6 --batch
 $ sqlmap -u <URL> --prefix="%'))" --suffix="-- -"
 $ sqlmap -u <URL> -v 3 --level=5
