@@ -704,16 +704,14 @@ $ sqlmap -r login.req
 - Command Injection Operators
 
 ```
-| **Injection Operator** | **Injection Character** | **URL-Encoded Character** | **Executed Command** |
-|-|-|-|-|
-|Semicolon| `;`|`%3b`|Both|
-|New Line| `\n`|`%0a`|Both|
-|Background| `&`|`%26`|Both (second output generally shown first)|
-|Pipe| `\|`|`%7c`|Both (only second output is shown)|
-|AND| `&&`|`%26%26`|Both (only if first succeeds)|
-|OR| `\|\|`|`%7c%7c`|Second (only if first fails)|
-|Sub-Shell| ` `` `|`%60%60`|Both (Linux-only)|
-|Sub-Shell| `$()`|`%24%28%29`|Both (Linux-only)|
+Semicolon = ; OR %3b	(executes both commands)
+New Line = \n OR %0a	(executes both commands)
+Background = & OR %26 (executes both commands - second output generally shown first)
+Pipe = | OR %7c (executes both commands - only second output is shown)
+AND = && OR %26%26 (executes both commands - only if first succeeds)
+OR = || OR %7c%7c	(executes second command - only if first fails)
+Sub-Shell = `` OR %60%60 (executes both commands - Linux only)
+Sub-Shell = $() OR %24%28%29 (executes both commands - Linux only)
 ```
 
 #12. - Sensitive Data Exposure
