@@ -704,14 +704,26 @@ $ sqlmap -r login.req
 - Command Injection Operators
 
 ```
-Semicolon = ; OR %3b	(executes both commands)
-New Line = \n OR %0a	(executes both commands)
-Background = & OR %26 (executes both commands - second output generally shown first)
-Pipe = | OR %7c (executes both commands - only second output is shown)
-AND = && OR %26%26 (executes both commands - only if first succeeds)
-OR = || OR %7c%7c	(executes second command - only if first fails)
-Sub-Shell = `` OR %60%60 (executes both commands - Linux only)
-Sub-Shell = $() OR %24%28%29 (executes both commands - Linux only)
+;
+\n
+&
+|
+&&
+||
+``
+$()
+```
+
+- Linux Filtered Character Bypass
+
+```
+printenv
+%09
+${IFS}
+{ls,-la}
+${PATH:0:1}
+${LS_COLORS:10:1}
+$(tr '!-}' '"-~'<<<[)
 ```
 
 #12. - Sensitive Data Exposure
