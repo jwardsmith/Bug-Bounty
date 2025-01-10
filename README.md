@@ -12,10 +12,11 @@ Overview
 8. - [JavaScript Deobfuscation](#8---javascript-deobfuscation)
 9. - [Cross-Site Scripting (XSS)](#9---cross-site-scripting-xss)
 10. - [SQL Injection](#10---sql-injection)
-11. - [Sensitive Data Exposure](#11---sensitive-data-exposure)
-12. - [HTML Injection](#12---html-injection)
-13. - [Cross-Site Request Forgery (CSRF)](#13---cross-site-request-forgery-csrf)
-14. - [Exploit Research](#14---exploit-research)
+11. - [Command Injection](#11---command-injection)
+12. - [Sensitive Data Exposure](#12---sensitive-data-exposure)
+13. - [HTML Injection](#13---html-injection)
+14. - [Cross-Site Request Forgery (CSRF)](#14---cross-site-request-forgery-csrf)
+15. - [Exploit Research](#15---exploit-research)
 
    
 #1. - Web Requests
@@ -697,7 +698,10 @@ Paste the entire request from Burp
 $ sqlmap -r login.req
 ```
 
-#11. - Sensitive Data Exposure
+#11. - Command Injection
+-----------------------------------------
+
+#12. - Sensitive Data Exposure
 -----------------------------------------
 
 - Source Code
@@ -708,7 +712,7 @@ OR
 CTRL + U
 ```
 
-#12. - HTML Injection
+#13. - HTML Injection
 -----------------------------------------
 
 - Hyperlink
@@ -718,7 +722,7 @@ CTRL + U
 ```
 
 
-#13. - Cross-Site Request Forgery (CSRF)
+#14. - Cross-Site Request Forgery (CSRF)
 -----------------------------------------
 
 - Password Change
@@ -727,7 +731,7 @@ CTRL + U
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#14. - Exploit Research
+#15. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
