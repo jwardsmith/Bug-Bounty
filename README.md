@@ -710,8 +710,8 @@ $ sqlmap -r login.req
 |
 &&
 ||
-``
-$()
+`` (Linux only - wrap command in backticks)
+$() (Linux only - wrap command in parentheses)
 ```
 
 - Linux Filtered Character Bypass
