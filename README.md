@@ -720,14 +720,14 @@ Header Injection =	\n \r\n \t %0d %0a %09
 - Command Injection Operators
 
 ```
-;
-\n
-&
-|
-&&
-||
-`` (Linux only - wrap command in backticks)
-$() (Linux only - wrap command in parentheses)
+; (URL-Encoded = %3b)
+\n (URL-Encoded = %0a)
+& (URL-Encoded = %26)
+| (URL-Encoded = %7c)
+&& (URL-Encoded = %26%26)
+|| (URL-Encoded = %7c%7c)
+`` (Linux only - wrap command in backticks) (URL-Encoded = %60%60)
+$() (Linux only - wrap command in parentheses) (URL-Encoded = %24%28%29)
 ```
 
 #12. - Sensitive Data Exposure
