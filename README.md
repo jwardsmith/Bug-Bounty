@@ -701,6 +701,22 @@ $ sqlmap -r login.req
 #11. - Command Injection
 -----------------------------------------
 
+- Common Injection Operators
+
+```
+SQL Injection =	' , ; -- /* */
+Command Injection =	; &&
+LDAP Injection =	* ( ) & |
+XPath Injection =	' or and not substring concat count
+OS Command Injection =	; & |
+Code Injection =	' ; -- /* */ $() ${} #{} %{} ^
+Directory Traversal/File Path Traversal =	../ ..\\ %00
+Object Injection =	; & |
+XQuery Injection =	' ; -- /* */
+Shellcode Injection =	\x \u %u %n
+Header Injection =	\n \r\n \t %0d %0a %09
+```
+
 - Command Injection Operators
 
 ```
@@ -712,18 +728,6 @@ $ sqlmap -r login.req
 ||
 `` (Linux only - wrap command in backticks)
 $() (Linux only - wrap command in parentheses)
-```
-
-- Linux Filtered Character Bypass
-
-```
-printenv
-%09
-${IFS}
-{ls,-la}
-${PATH:0:1}
-${LS_COLORS:10:1}
-$(tr '!-}' '"-~'<<<[)
 ```
 
 #12. - Sensitive Data Exposure
