@@ -743,9 +743,13 @@ https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Inject
 - Bypass Other Characters (Environment Variables)
 
 ```
-printenv = Can be used to view all environment variables
+printenv = Can be used to view all environment variables (Linux)
+Get-ChildItem Env: = Can be used to view all environment variables (Windows)
 / = ${PATH:0:1}
 ; = ${LS_COLORS:10:1}
+\ %HOMEPATH:~6,-11%
+\ $env:HOMEPATH[0]
+$(tr '!-}' '"-~'<<<[)	Shift character by one ([ -> \)
 ```
 
 #12. - Sensitive Data Exposure
