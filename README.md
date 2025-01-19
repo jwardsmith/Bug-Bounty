@@ -730,6 +730,16 @@ Header Injection =	\n \r\n \t %0d %0a %09
 $() (Linux only - wrap command in parentheses) (URL-Encoded = %24%28%29)
 ```
 
+- Bypass Space Filters
+
+```
+Spaces (URL-Encoded = %20)
+Tabs (URL-Encoded = %09)
+${IFS} Linux Environment Variable
+{ls,-la} Bash Brace Expansion
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection#bypass-without-space
+```
+
 #12. - Sensitive Data Exposure
 -----------------------------------------
 
