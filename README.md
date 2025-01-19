@@ -740,6 +740,14 @@ ${IFS} Linux Environment Variable
 https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection#bypass-without-space
 ```
 
+- Bypass Other Characters (Environment Variables)
+
+```
+printenv = Can be used to view all environment variables
+/ = ${PATH:0:1}
+; = ${LS_COLORS:10:1}
+```
+
 #12. - Sensitive Data Exposure
 -----------------------------------------
 
