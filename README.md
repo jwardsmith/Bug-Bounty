@@ -752,6 +752,16 @@ $env:HOMEPATH[0] = \
 $(tr '!-}' '"-~'<<<[) =	Shift character by one ([ -> \)
 ```
 
+- Bypass Command Filters
+
+```
+w'h'o'am'i
+w"h"o"am"i
+who$@ami
+w\ho\am\i
+who^ami
+```
+
 #12. - Sensitive Data Exposure
 -----------------------------------------
 
