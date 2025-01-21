@@ -782,6 +782,18 @@ iex "$([System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64Str
 https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Command%20Injection#bypass-with-variable-expansion
 ```
 
+- Automated Obfuscation Tools
+
+```
+https://github.com/Bashfuscator/Bashfuscator
+$ ./bashfuscator -c 'cat /etc/passwd'
+$ ./bashfuscator -c 'cat /etc/passwd' -s 1 -t 1 --no-mangling --layers 1
+https://github.com/danielbohannon/Invoke-DOSfuscation
+PS C:\> SET COMMAND type C:\Users\htb-student\Desktop\flag.txt
+PS C:\> encoding
+PS C:\> 1
+```
+
 #12. - Sensitive Data Exposure
 -----------------------------------------
 
