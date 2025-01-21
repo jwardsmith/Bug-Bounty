@@ -747,8 +747,11 @@ printenv = Can be used to view all environment variables (Linux)
 Get-ChildItem Env: = Can be used to view all environment variables (Windows)
 ${PATH:0:1} = /
 ${LS_COLORS:10:1} = ;
+%HOMEPATH:~0,-17% = \
 %HOMEPATH:~6,-11% = \
+%PROGRAMFILES:~10,-5% = (space)
 $env:HOMEPATH[0] = \
+$env:PROGRAMFILES[10] = (space)
 $(tr '!-}' '"-~'<<<[) =	Shift character by one ([ -> \)
 ```
 
