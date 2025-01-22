@@ -1,4 +1,4 @@
-# Bug Bounty
+# Bug Bountyy
 
 Overview
 ---------
