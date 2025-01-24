@@ -855,7 +855,7 @@ https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Upload%20Insecur
 https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-extensions.txt
 shell.jpg.php
 shell.php.jpg
-%20, %0a, %00, %0d0a, /, .\, ., …
+%20, %0a, %00, %0d0a, /, .\, ., …, :
 https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-all-content-types.txt
 https://en.wikipedia.org/wiki/List_of_file_signatures
 ```
