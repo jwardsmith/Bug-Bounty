@@ -860,6 +860,19 @@ https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web
 https://en.wikipedia.org/wiki/List_of_file_signatures
 ```
 
+- File Permutation Bash Script
+
+```
+for char in '%20' '%0a' '%00' '%0d0a' '/' '.\\' '.' '…' ':'; do
+    for ext in '.php' '.phps'; do
+        echo "shell$char$ext.jpg" >> wordlist.txt
+        echo "shell$ext$char.jpg" >> wordlist.txt
+        echo "shell.jpg$char$ext" >> wordlist.txt
+        echo "shell.jpg$ext$char" >> wordlist.txt
+    done
+done
+```
+
 #13. - Sensitive Data Exposure
 -----------------------------------------
 
