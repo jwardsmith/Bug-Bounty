@@ -873,6 +873,12 @@ for char in '%20' '%0a' '%00' '%0d0a' '/' '.\\' '.' '…' ':'; do
 done
 ```
 
+- File Signatures
+
+```
+https://en.wikipedia.org/wiki/List_of_file_signatures
+```
+
 #13. - Sensitive Data Exposure
 -----------------------------------------
 
