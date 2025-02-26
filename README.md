@@ -873,10 +873,12 @@ for char in '%20' '%0a' '%00' '%0d0a' '/' '.\\' '.' '…' ':'; do
 done
 ```
 
-- File Signatures
+- Limited Uploads
 
 ```
-https://en.wikipedia.org/wiki/List_of_file_signatures
+XSS = HTML, JS, SVG, GIF
+XXE/SSRF = XML, SVG, PDF, PPT, DOC
+DoS = ZIP, JPG, PNG
 ```
 
 #13. - Sensitive Data Exposure
