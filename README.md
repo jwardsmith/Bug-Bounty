@@ -14,10 +14,11 @@ Overview
 10. - [SQL Injection](#10---sql-injection)
 11. - [Command Injection](#11---command-injection)
 12. - [File Uploads](#12---file-uploads)
-13. - [Sensitive Data Exposure](#12---sensitive-data-exposure)
-14. - [HTML Injection](#13---html-injection)
-15. - [Cross-Site Request Forgery (CSRF)](#14---cross-site-request-forgery-csrf)
-16. - [Exploit Research](#15---exploit-research)
+13. - [Server-Side Attacks](#12---server-side-attacks)
+14. - [Sensitive Data Exposure](#12---sensitive-data-exposure)
+15. - [HTML Injection](#13---html-injection)
+16. - [Cross-Site Request Forgery (CSRF)](#14---cross-site-request-forgery-csrf)
+17. - [Exploit Research](#15---exploit-research)
 
    
 #1. - Web Requests
@@ -891,7 +892,10 @@ file';select+sleep(5);--.jpg
 file<script>alert(window.origin);</script>.jpg
 ```
 
-#13. - Sensitive Data Exposure
+#13. - Server-Side Attacks
+-----------------------------------------
+
+#14. - Sensitive Data Exposure
 -----------------------------------------
 
 - Source Code
@@ -902,7 +906,7 @@ OR
 CTRL + U
 ```
 
-#14. - HTML Injection
+#15. - HTML Injection
 -----------------------------------------
 
 - Hyperlink
@@ -912,7 +916,7 @@ CTRL + U
 ```
 
 
-#15. - Cross-Site Request Forgery (CSRF)
+#16. - Cross-Site Request Forgery (CSRF)
 -----------------------------------------
 
 - Password Change
@@ -921,7 +925,7 @@ CTRL + U
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#16. - Exploit Research
+#17. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
