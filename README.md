@@ -14,11 +14,11 @@ Overview
 10. - [SQL Injection](#10---sql-injection)
 11. - [Command Injection](#11---command-injection)
 12. - [File Uploads](#12---file-uploads)
-13. - [Server-Side Attacks](#12---server-side-attacks)
-14. - [Sensitive Data Exposure](#12---sensitive-data-exposure)
-15. - [HTML Injection](#13---html-injection)
-16. - [Cross-Site Request Forgery (CSRF)](#14---cross-site-request-forgery-csrf)
-17. - [Exploit Research](#15---exploit-research)
+13. - [Server-Side Attacks](#13---server-side-attacks)
+14. - [Sensitive Data Exposure](#14---sensitive-data-exposure)
+15. - [HTML Injection](#15---html-injection)
+16. - [Cross-Site Request Forgery (CSRF)](#16---cross-site-request-forgery-csrf)
+17. - [Exploit Research](#17---exploit-research)
 
    
 #1. - Web Requests
