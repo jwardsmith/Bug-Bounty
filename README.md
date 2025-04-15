@@ -895,6 +895,18 @@ file<script>alert(window.origin);</script>.jpg
 #13. - Server-Side Attacks
 -----------------------------------------
 
+- Server-Side Request Forgery (SSRF)
+
+*Allows an attacker to cause the server-side application to make requests to an unintended location.*
+
+- Server-Side Template Injection (SSTI)
+
+*Allows an attacker to use native template syntax to inject a malicious payload into a template, which is then executed server-side.*
+
+- Server-Side Includes (SSI) Injection
+
+- eXtensible Stylesheet Language Transformations (XSLT) Server-Side Injection
+
 #14. - Sensitive Data Exposure
 -----------------------------------------
 
