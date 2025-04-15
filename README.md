@@ -905,7 +905,11 @@ file<script>alert(window.origin);</script>.jpg
 
 - Server-Side Includes (SSI) Injection
 
+*Arise when an application incorporates user-controllable data into response that is then parsed for Server-Side Include directives.*
+
 - eXtensible Stylesheet Language Transformations (XSLT) Server-Side Injection
+
+*Arise when an attacker can manipulate XSLT transformations performed on the server.*
 
 #14. - Sensitive Data Exposure
 -----------------------------------------
