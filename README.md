@@ -916,6 +916,13 @@ $ python2.7 gopherus.py --exploit smtp
 
 *Allows an attacker to use native template syntax to inject a malicious payload into a template, which is then executed server-side.*
 
+```
+${{<%[%'"}}%\.
+```
+
+![image](https://github.com/user-attachments/assets/af2de088-7f4d-4d77-a004-c03ca2d964e6)
+
+
 - Server-Side Includes (SSI) Injection
 
 *Arise when an application incorporates user-controllable data into response that is then parsed for Server-Side Include directives.*
