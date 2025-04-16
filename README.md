@@ -14,14 +14,14 @@ Overview
 10. - [SQL Injection](#10---sql-injection)
 11. - [Command Injection](#11---command-injection)
 12. - [File Uploads](#12---file-uploads)
-13. - [Server-Side Attacks](#13---server-side-attacks)
-14. - [Server-Side Attacks](#13---server-side-attacks)
-15. - [Server-Side Attacks](#13---server-side-attacks)
-16. - [Server-Side Attacks](#13---server-side-attacks)
-17. - [Sensitive Data Exposure](#14---sensitive-data-exposure)
-18. - [HTML Injection](#15---html-injection)
-19. - [Cross-Site Request Forgery (CSRF)](#16---cross-site-request-forgery-csrf)
-20. - [Exploit Research](#17---exploit-research)
+13. - [Server-Side Request Forgery (SSRF)](#13---server-side-request-forgery-ssrf)
+14. - [Server-Side Template Injection (SSTI)](#14---server-side-template-injection-ssti)
+15. - [Server-Side Includes (SSI) Injection](#15---server-side-includes-ssi-injection)
+16. - [eXtensible Stylesheet Language Transformations (XSLT) Server-Side Injection](#16---extensible-stylesheet-language-transformations-xslt-server-side-injection)
+17. - [Sensitive Data Exposure](#17---sensitive-data-exposure)
+18. - [HTML Injection](#18---html-injection)
+19. - [Cross-Site Request Forgery (CSRF)](#19---cross-site-request-forgery-csrf)
+20. - [Exploit Research](#20---exploit-research)
 
    
 #1. - Web Requests
