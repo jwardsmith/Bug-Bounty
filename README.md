@@ -948,7 +948,18 @@ $ python2.7 gopherus.py --exploit smtp
 ${{<%[%'"}}%\.
 ```
 
-![image](https://github.com/user-attachments/assets/af2de088-7f4d-4d77-a004-c03ca2d964e6)
+- Identify the Template Engine
+
+```
+${7*7} (if this executes) -> a{*comment*}b (if this executes) = Smarty
+${7*7} (if this executes) -> a{*comment*}b (if this does not execute) -> ${"z".join("ab")} (if this executes) = Mako
+${7*7} (if this executes) -> a{*comment*}b (if this does not execute) -> ${"z".join("ab")} (if this does not execute) = Unknown
+
+${7*7} (if this does not execute) -> {{7*7}} (if this does not execute) = Not Vulnerable
+${7*7} (if this does not execute) -> {{7*7}} (if this executes) = {{7*'7'}} (if this executes as 7777777) = Jinja2
+${7*7} (if this does not execute) -> {{7*7}} (if this executes) = {{7*'7'}} (if this executes as 49) = Twig
+${7*7} (if this does not execute) -> {{7*7}} (if this executes) = {{7*'7'}} (if this does not execute) = Unknown
+```
 
 - Jinja
 
