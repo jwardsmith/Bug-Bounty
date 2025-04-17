@@ -1164,6 +1164,13 @@ $ ffuf -w ./city_wordlist.txt -u http://pwreset.htb/security_question.php -X POS
 In Burp -> Right-Click request ->  Do intercept -> Response to this request -> Change status code to 200 instead of 302
 ```
 
+- Parameter Brute-Force
+
+```
+$ seq -w 0 999 > parameters.txt
+$ ffuf -w ./parameters.txt -u http://<IP address>/admin.php?user_id=FUZZ -fr "Could not load admin data"
+```
+
 #19. - Sensitive Data Exposure
 -----------------------------------------
 
