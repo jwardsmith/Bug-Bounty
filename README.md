@@ -19,10 +19,11 @@ Overview
 15. - [Server-Side Includes (SSI) Injection](#15---server-side-includes-ssi-injection)
 16. - [eXtensible Stylesheet Language Transformations (XSLT) Server-Side Injection](#16---extensible-stylesheet-language-transformations-xslt-server-side-injection)
 17. - [Login Brute Forcing](#17---login-brute-forcing)
-18. - [Sensitive Data Exposure](#18---sensitive-data-exposure)
-19. - [HTML Injection](#19---html-injection)
-20. - [Cross-Site Request Forgery (CSRF)](#20---cross-site-request-forgery-csrf)
-21. - [Exploit Research](#21---exploit-research)
+18. - [Broken Authentication](#18---broken-authentication)
+19. - [Sensitive Data Exposure](#19---sensitive-data-exposure)
+20. - [HTML Injection](#20---html-injection)
+21. - [Cross-Site Request Forgery (CSRF)](#21---cross-site-request-forgery-csrf)
+22. - [Exploit Research](#22---exploit-research)
 
    
 #1. - Web Requests
@@ -1092,7 +1093,10 @@ $ cupp -w profiles.txt
 $ cupp -l
 ```
 
-#18. - Sensitive Data Exposure
+#18. - Broken Authentication
+-----------------------------------------
+
+#19. - Sensitive Data Exposure
 -----------------------------------------
 
 - Source Code
@@ -1103,7 +1107,7 @@ OR
 CTRL + U
 ```
 
-#19. - HTML Injection
+#20. - HTML Injection
 -----------------------------------------
 
 - Hyperlink
@@ -1113,7 +1117,7 @@ CTRL + U
 ```
 
 
-#20. - Cross-Site Request Forgery (CSRF)
+#21. - Cross-Site Request Forgery (CSRF)
 -----------------------------------------
 
 - Password Change
@@ -1122,7 +1126,7 @@ CTRL + U
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#21. - Exploit Research
+#22. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
