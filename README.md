@@ -1120,6 +1120,7 @@ $ ffuf -w /opt/useful/seclists/Usernames/xato-net-10-million-usernames.txt -u ht
 
 ```
 $ grep '[[:upper:]]' /opt/useful/seclists/Passwords/Leaked-Databases/rockyou.txt | grep '[[:lower:]]' | grep '[[:digit:]]' | grep -E '.{10}' > custom_wordlist.txt
+$ grep '[[:upper:]]' /opt/useful/seclists/Passwords/Leaked-Databases/rockyou.txt | grep '[[:lower:]]' | grep '[[:digit:]]' | grep -E '^.{12}$' | grep -Ev '[^[:alnum:]]' > custom_wordlist.txt
 ```
 
 - Password Brute-Force
