@@ -1171,6 +1171,22 @@ $ seq -w 0 999 > parameters.txt
 $ ffuf -w ./parameters.txt -u http://<IP address>/admin.php?user_id=FUZZ -fr "Could not load admin data"
 ```
 
+- Session Token Brute-Force
+
+```
+$ echo -n dXNlcj1odGItc3RkbnQ7cm9sZT11c2Vy | base64 -d
+user=htb-stdnt;role=user
+
+$ echo -n 'user=htb-stdnt;role=admin' | base64
+dXNlcj1odGItc3RkbnQ7cm9sZT1hZG1pbg==
+
+$ echo 757365723d6874622d7374646e743b726f6c653d75736572 | xxd -r -p
+user=htb-stdnt;role=user
+
+$ echo -n 'user=htb-stdnt;role=admin' | xxd -p
+757365723d6874622d7374646e743b726f6c653d61646d696e
+```
+
 #19. - Sensitive Data Exposure
 -----------------------------------------
 
