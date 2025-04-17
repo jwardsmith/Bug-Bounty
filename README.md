@@ -1093,6 +1093,20 @@ $ cupp -w profiles.txt
 $ cupp -l
 ```
 
+- Password Policy Filtering
+
+```
+$ grep -E '^.{8,}$' wordlist.txt (Minimum Length = 8)
+$ grep -E '[A-Z]' wordlist.txt (Matches any uppercase character)
+$ grep -E '[a-z]' wordlist.txt (Matches any lowercase character)
+$ grep -E '[0-9]' wordlist.txt (Matches any digit)
+$ grep -E '[!@#$%^&*()_+-=[]{};':"\,.<>/?]' wordlist.txt (Matches any special character)
+$ grep -E '(.)\1' wordlist.txt (No consecutive repeated characters)
+$ grep -v -i 'password' wordlist.txt (Exclude a word)
+$ grep -v -f dictionary.txt wordlist.txt (Exclude words from a file)
+$ grep -E '^.{8,}$' wordlist.txt | grep -E '[A-Z]' (Multiple filters on minimum length and uppercase characters)
+```
+
 #18. - Broken Authentication
 -----------------------------------------
 
