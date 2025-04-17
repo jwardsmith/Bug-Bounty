@@ -1142,6 +1142,14 @@ $ seq -w 0 9999 > tokens.txt
 $ ffuf -w ./tokens.txt -u http://bf_2fa.htb/2fa.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -b "PHPSESSID=fpfcm5b8dh1ibfa7idg0he7l93" -d "otp=FUZZ" -fr "Invalid 2FA Code"
 ```
 
+- Default Credentials
+
+```
+https://www.cirt.net/passwords
+https://github.com/danielmiessler/SecLists/tree/master/Passwords/Default-Credentials
+https://github.com/scadastrangelove/SCADAPASS/tree/master
+```
+
 #19. - Sensitive Data Exposure
 -----------------------------------------
 
