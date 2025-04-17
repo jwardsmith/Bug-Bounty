@@ -1116,6 +1116,12 @@ $ grep -E '^.{8,}$' wordlist.txt | grep -E '[A-Z]' (Multiple filters on minimum 
 $ ffuf -w /opt/useful/seclists/Usernames/xato-net-10-million-usernames.txt -u http://<IP address>/index.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "username=FUZZ&password=invalid" -fr "Unknown user"
 ```
 
+- Filtering Wordlist
+
+```
+$ grep '[[:upper:]]' /opt/useful/seclists/Passwords/Leaked-Databases/rockyou.txt | grep '[[:lower:]]' | grep '[[:digit:]]' | grep -E '.{10}' > custom_wordlist.txt
+```
+
 #19. - Sensitive Data Exposure
 -----------------------------------------
 
