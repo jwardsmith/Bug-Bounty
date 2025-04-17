@@ -1161,7 +1161,7 @@ $ ffuf -w ./city_wordlist.txt -u http://pwreset.htb/security_question.php -X POS
 - Intercept Web Response
 
 ```
-In Burp -> Right-Click request ->  Do intercept -> Response to this request 
+In Burp -> Right-Click request ->  Do intercept -> Response to this request -> Change status code to 200 instead of 302
 ```
 
 #19. - Sensitive Data Exposure
