@@ -1158,6 +1158,12 @@ $ cat world-cities.csv | cut -d ',' -f1 > city_wordlist.txt
 $ ffuf -w ./city_wordlist.txt -u http://pwreset.htb/security_question.php -X POST -H "Content-Type: application/x-www-form-urlencoded" -b "PHPSESSID=39b54j201u3rhu4tab1pvdb4pv" -d "security_response=FUZZ" -fr "Incorrect response."
 ```
 
+- Intercept Web Response
+
+```
+In Burp -> Right-Click request ->  Do intercept -> Response to this request 
+```
+
 #19. - Sensitive Data Exposure
 -----------------------------------------
 
