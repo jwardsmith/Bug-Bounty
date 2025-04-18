@@ -1193,6 +1193,19 @@ $ echo -n 'user=htb-stdnt;role=admin' | xxd -p
 #19. - HTTP Verb Tampering
 -----------------------------------------
 
+- Check Accepted HTTP Methods
+
+```
+$ curl -i -X OPTIONS http://<IP address>:<port>/
+```
+
+- Burp Request HTTP Method Tampering
+
+```
+Right-click intercepted request in Burp -> Change Request Method
+Rename the GET/POST request to a HEAD
+```
+
 #20. - Insecure Direct Object References (IDOR)
 -----------------------------------------
 
