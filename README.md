@@ -1633,6 +1633,14 @@ https://raw.githubusercontent.com/DragonJAR/Security-Wordlist/main/LFI-WordList-
 https://raw.githubusercontent.com/DragonJAR/Security-Wordlist/main/LFI-WordList-Windows
 ```
 
+- Automated File Inclusion
+
+```
+https://github.com/D35m0nd142/LFISuite
+https://github.com/OsandaMalith/LFiFreak
+https://github.com/mzfr/liffy
+```
+
 #23. - Sensitive Data Exposure
 -----------------------------------------
 
