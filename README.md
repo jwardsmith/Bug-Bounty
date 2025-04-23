@@ -513,6 +513,14 @@ https://github.com/rajeshmajumdar/BruteXSS
 https://github.com/epsylon/xsser
 ```
 
+- XSS OOB Testing
+
+```
+https://xsshunter.com/#/
+https://portswigger.net/burp/documentation/collaborator
+https://app.interactsh.com/#/
+```
+
 #10. - SQL Injection
 -----------------------------------------
 
