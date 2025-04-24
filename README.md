@@ -1663,6 +1663,18 @@ Open Dev Tools -> Storage -> Copy Cookie Value from Authenticated Session -> Pas
 #24. - WordPress
 -----------------------------------------
 
+- Plugin Enumeration
+
+```
+$ wpscan --url <URL> -e ap	
+```
+
+- User Enumeration
+
+```
+$ wpscan --url <URL> -e u	
+```
+
 #25. - Sensitive Data Exposure
 -----------------------------------------
 
