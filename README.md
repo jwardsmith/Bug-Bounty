@@ -1677,6 +1677,7 @@ $ curl -s -X GET <URL> | sed 's/href=/\n/g' | sed 's/src=/\n/g' | grep 'wp-conte
 $ curl -s -X GET http://<URL>/wp-content/plugins/<plugin name>/ | html2text
 $ curl -I -X GET http://<URL>/wp-content/plugins/<plugin name>
 $ wpscan --url <URL> -e ap
+$ wpscan --url <URL> -e ap --api-token <API token>
 ```
 
 - Theme Enumeration
@@ -1685,6 +1686,7 @@ $ wpscan --url <URL> -e ap
 $ curl -s -X GET <URL> | sed 's/href=/\n/g' | sed 's/src=/\n/g' | grep 'themes' | cut -d"'" -f2
 $ curl -I -X GET http://<URL>/wp-content/themes/<theme name>
 $ wpscan --url <URL> -e at
+$ wpscan --url <URL> -e at --api-token <API token>
 ```
 
 - User Enumeration
