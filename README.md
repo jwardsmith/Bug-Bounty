@@ -28,7 +28,7 @@ Overview
 24. - [Session Fixation](#24---session-fixation)
 25. - [Cross-Site Request Forgery](#25---cross-site-request-forgery-csrf)
 26. - [Open Redirect](#26---open-redirect)
-27. - [Web Service/API](#27---web-service-api) 
+27. - [Web Service/API](#27---web-serviceapi) 
 28. - [WordPress](#28---wordpress) 
 29. - [Exploit Research](#29---exploit-research)
    
