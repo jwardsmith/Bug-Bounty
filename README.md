@@ -1654,7 +1654,7 @@ https://github.com/mzfr/liffy
 - Steal Cookie
 
 ```
-Open Dev Tools -> Storage -> Copy Cookie Value from Authenticated Session -> Paste Cookie Value into Unauthenticated Session
+Open Dev Tools -> Storage -> Copy cookie value from authenticated session -> Paste cookie value into unauthenticated session -> Reload page
 ```
 
 #24. - WordPress
