@@ -1657,6 +1657,19 @@ https://github.com/mzfr/liffy
 Open Dev Tools -> Storage -> Copy cookie value from authenticated session -> Paste cookie value into unauthenticated session -> Reload page
 ```
 
+#24. - Session Fixation
+-----------------------------------------
+
+- Session Cookie Identification
+
+```
+http://oredirect.htb.net/?redirect_uri=/complete.html&token=ac7o1erbkmob8lzy1xq1abu5k8k5rgvw
+OR
+PHPSESSID=ac7o1erbkmob8lzy1xq1abu5k8k5rgvw
+OR
+http://oredirect.htb.net/login?PHPSESSID=ac7o1erbkmob8lzy1xq1abu5k8k5rgvw
+```
+
 #24. - WordPress
 -----------------------------------------
 
