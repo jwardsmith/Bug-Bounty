@@ -2007,12 +2007,15 @@ https://www.bugcrowd.com/
 - Report Essentials
 
 | Vulnerability Title       | Including vulnerability type, affected domain/parameter/endpoint, impact etc.                                                                                        |
-|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | CWE & CVSS score          | For communicating the characteristics and severity of the vulnerability.                                                                                             |
 | Vulnerability Description | Better understanding of the vulnerability cause.                                                                                                                     |
 | Proof of Concept (POC)    | Steps to reproduce exploiting the identified vulnerability clearly and concisely.                                                                                    |
 | Impact                    | Elaborate more on what an attacker can achieve by fully exploiting the vulnerability. Business impact and maximum damage should be included in the impact statement. |
 | Remediation               | Optional in bug bounty programs, but good to have.                                                                                                                   |
+| Scope:                    | Changed - Since the vulnerable component is the webserver and the impacted component is the browser                                                                  |
+| Confidentiality:          | Low - Access to DOM was possible                                                                                                                                     |
+| Integrity:                | Low - Through XSS, we can slightly affect the integrity of an application                                                                                            |
+| Availability:             | None - We cannot deny the service through XSS         
 
 - CWE/CVSS
 
@@ -2025,7 +2028,6 @@ https://www.bugcrowd.com/
 *Examples:*
 
 | Title:               | Cisco ASA Software IKEv1 and IKEv2 Buffer Overflow Vulnerability (CVE-2016-1287)                                                                                                          |
-|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | CVSS 3.1 Score:      | 9.8 (Critical)                                                                                                                                                                            |
 | Attack Vector:       | Network - The Cisco ASA device was exposed to the internet since it was used to facilitate connections to the internal network through VPN.                                               |
 | Attack Complexity:   | Low - All the attacker has to do is execute the available exploit against the device                                                                                                      |
@@ -2037,7 +2039,6 @@ https://www.bugcrowd.com/
 | Availability:        | High - Successful exploitation of the vulnerability results in unrestricted access in the form of a reverse shell. Attackers can deny the service to users by powering the device off     |
 
 | Title:               | Stored XSS in an admin panel (Malicious Admin -> Admin)                                                                  |
-|----------------------|--------------------------------------------------------------------------------------------------------------------------|
 | CVSS 3.1 Score:      | 5.5 (Medium)                                                                                                             |
 | Attack Vector:       | Network - The attack can be mounted over the internet.                                                                   |
 | Attack Complexity:   | Low - All the attacker (malicious admin) has to do is specify the XSS payload that is eventually stored in the database. |
@@ -2046,7 +2047,8 @@ https://www.bugcrowd.com/
 | Scope:               | Changed - Since the vulnerable component is the webserver and the impacted component is the browser                      |
 | Confidentiality:     | Low - Access to DOM was possible                                                                                         |
 | Integrity:           | Low - Through XSS, we can slightly affect the integrity of an application                                                |
-| Availability:        | None - We cannot deny the service through XSS                                                                            |
+| Availability:        | None - We cannot deny the service through XSS   
+
 
 *Good Report Examples:*
 - https://hackerone.com/reports/341876
