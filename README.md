@@ -1994,7 +1994,7 @@ https://www.vulnerability-lab.com/
 https://packetstormsecurity.com/
 ```
 
-#29. - Report Writing
+#30. - Report Writing
 -----------------------------------------
 
 - Reputable Bug Bounty Programs
