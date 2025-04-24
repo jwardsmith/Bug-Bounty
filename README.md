@@ -1673,7 +1673,17 @@ $ cat /var/www/html/wordpress/readme.html
 - Plugin Enumeration
 
 ```
-$ wpscan --url <URL> -e ap	
+$ curl -s -X GET <URL> | sed 's/href=/\n/g' | sed 's/src=/\n/g' | grep 'wp-content/plugins/*' | cut -d"'" -f2
+$ curl -I -X GET http://<URL>/wp-content/plugins/<plugin name>
+$ wpscan --url <URL> -e ap
+```
+
+- Theme Enumeration
+
+```
+$ curl -s -X GET <URL> | sed 's/href=/\n/g' | sed 's/src=/\n/g' | grep 'themes' | cut -d"'" -f2
+$ curl -I -X GET http://<URL>/wp-content/themes/<theme name>
+$ wpscan --url <URL> -e at
 ```
 
 - User Enumeration
