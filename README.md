@@ -1674,6 +1674,7 @@ $ cat /var/www/html/wordpress/readme.html
 
 ```
 $ curl -s -X GET <URL> | sed 's/href=/\n/g' | sed 's/src=/\n/g' | grep 'wp-content/plugins/*' | cut -d"'" -f2
+$ curl -s -X GET http://<URL>/wp-content/plugins/<plugin name>/ | html2text
 $ curl -I -X GET http://<URL>/wp-content/plugins/<plugin name>
 $ wpscan --url <URL> -e ap
 ```
