@@ -1690,6 +1690,8 @@ $ wpscan --url <URL> -e at
 - User Enumeration
 
 ```
+$ curl -s -I http://<URL>/?author=1
+$ curl http://<URL>/wp-json/wp/v2/users | jq
 $ wpscan --url <URL> -e u	
 ```
 
