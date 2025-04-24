@@ -1663,6 +1663,13 @@ Open Dev Tools -> Storage -> Copy Cookie Value from Authenticated Session -> Pas
 #24. - WordPress
 -----------------------------------------
 
+- Version Enumeration
+
+```
+$ curl -s -X GET <URL> | grep '<meta name="generator"'
+$ cat /var/www/html/wordpress/readme.html
+```
+
 - Plugin Enumeration
 
 ```
